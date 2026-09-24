@@ -20,7 +20,7 @@ favicon.svg
 
 1. **WhatsApp**: em `assets/js/main.js`, troque `CONFIG.whatsapp` pelo número comercial (55 + DDD + número, só dígitos).
 2. **Formulário**: preencha `CONFIG.formEndpoint` com um webhook (CRM, Make, n8n, Formspree). Sem endpoint, o formulário abre o WhatsApp com o resumo do lead.
-3. **Números de cases e stats**: os valores nas seções `#valor` e `#cases` são ilustrativos. Substitua pelos resultados reais antes de ir ao ar (os blocos estão marcados com `SUBSTITUA` no HTML).
+3. **Cases**: a seção `#cases` traz Parket, Travertino Navona e Studio Meraki. Confirme a descrição das frentes entregues em cada card (`.case-front`). Os números da caixa de stats em `#valor` são posicionamento, não métricas de cliente.
 4. **Redes sociais**: ajuste os links de Instagram e LinkedIn no rodapé.
 5. **Palavras do título**: edite `CONFIG.rotatorWords`.
 
