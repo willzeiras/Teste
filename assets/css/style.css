@@ -241,14 +241,15 @@ h1, h2, .display {
   position: relative;
   min-height: 860px; max-height: 1140px; height: calc(100vh + 150px);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  overflow: hidden;
+  overflow: visible; clip-path: inset(0 0 -700px 0);
+  z-index: 0;
   padding-inline: var(--gutter);
   background: var(--cream);
 }
 .hero-wave {
   position: absolute; z-index: 0; pointer-events: none;
-  left: -6%; right: -6%; top: -6%; bottom: 0;
-  width: 112%; height: 106%; max-width: none;
+  left: -6%; right: -6%; top: -6%; bottom: auto;
+  width: 112%; height: 128%; max-width: none;
   animation: wavedrift 32s ease-in-out infinite alternate;
   will-change: transform;
 }
@@ -597,7 +598,7 @@ h1, h2, .display {
 .diag-contact a { text-decoration: underline; text-underline-offset: 4px; color: var(--ink); }
 
 /* ---------- Formulário em passos (diagnóstico) ---------- */
-.quote { background: var(--grey); padding-block: 72px 96px; position: relative; }
+.quote { background: transparent; padding-block: 72px 96px; position: relative; z-index: 1; }
 .quote-content { position: relative; width: 100%; max-width: 1400px; margin: 0 auto; padding-inline: var(--gutter); }
 .quote__inner { max-width: 943px; margin: 0 auto; }
 .diag .quote__inner { max-width: none; margin: 0; }
