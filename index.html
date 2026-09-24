@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Eleve Makers — IA e Resultado para arquitetura</title>
+  <meta name="description" content="A Eleve Makers transforma o comercial de escritórios de arquitetura, interiores e construção com IA: sites, CRM, agentes de qualificação e geração de clientes com briefing pronto.">
+  <meta name="theme-color" content="#FCF8EC">
+  <meta name="color-scheme" content="only light">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://elevemakers.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Eleve Makers — IA e Resultado para arquitetura">
+  <meta property="og:description" content="Sites, CRM, agentes de IA e clientes qualificados para escritórios de arquitetura, interiores e construção. Você projeta. A gente traz o cliente.">
+  <meta property="og:url" content="https://elevemakers.com/">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Eleve Makers — IA e Resultado para arquitetura">
+  <meta name="twitter:description" content="Sites, CRM, agentes de IA e clientes qualificados para escritórios de arquitetura, interiores e construção.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..500,100&family=Jost:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Eleve Makers",
+    "url": "https://elevemakers.com/",
+    "description": "Transformação comercial com IA para escritórios de arquitetura e o ecossistema da construção: sites, CRM, agentes de IA e geração de clientes qualificados.",
+    "areaServed": "BR",
+    "knowsAbout": ["Arquitetura", "Design de interiores", "Construção civil", "Marketing digital", "Inteligência artificial", "CRM"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#valor">Pular para o conteúdo</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav" aria-label="Principal">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a class="nav-brand" href="#hero" aria-label="Eleve Makers, início">
+          <svg class="nav-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+            <path d="M4 34 L20 6 L36 34 H28 L20 20 L12 34 Z" fill="currentColor"/>
+            <path d="M16 34 L20 27 L24 34 Z" fill="currentColor" opacity=".45"/>
+          </svg>
+        </a>
+        <a class="nav-link" href="#hero">Home</a>
+        <a class="nav-link" href="#solucoes">Soluções</a>
+        <a class="nav-link" href="#cases">Cases</a>
+        <a class="nav-link" href="#metodo">Método</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+      </div>
+      <a class="nav-cta" href="#diagnostico">Solicite um diagnóstico</a>
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navSheet">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile sheet -->
+  <div class="sheet" id="navSheet" aria-hidden="true">
+    <div class="sheet-top">
+      <svg class="nav-mark sheet-mark" viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+        <path d="M4 34 L20 6 L36 34 H28 L20 20 L12 34 Z" fill="currentColor"/>
+        <path d="M16 34 L20 27 L24 34 Z" fill="currentColor" opacity=".45"/>
+      </svg>
+      <button class="sheet-x" id="navClose" type="button" aria-label="Fechar menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 2 L20 20 M20 2 L2 20" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+      </button>
+    </div>
+    <nav class="sheet-nav" aria-label="Menu móvel">
+      <a class="sheet-link" href="#hero">Home</a>
+      <a class="sheet-link" href="#solucoes">Soluções</a>
+      <a class="sheet-link" href="#cases">Cases</a>
+      <a class="sheet-link" href="#metodo">Método</a>
+      <a class="sheet-link" href="#faq">FAQ</a>
+    </nav>
+    <a class="sheet-cta" href="#diagnostico">Solicite um diagnóstico</a>
+  </div>
+
+  <!-- WhatsApp floating button: troque o número em assets/js/main.js (CONFIG.whatsapp) -->
+  <a class="fab" href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" title="Falar no WhatsApp" data-whatsapp>
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path fill="currentColor" d="M16.03 4.5c-6.34 0-11.49 5.15-11.5 11.48 0 2.02.53 4 1.53 5.74L4.5 27.5l5.94-1.53a11.47 11.47 0 0 0 5.58 1.42h.01c6.33 0 11.48-5.15 11.49-11.48a11.4 11.4 0 0 0-3.36-8.13 11.4 11.4 0 0 0-8.13-3.38Zm0 21.02h-.01a9.54 9.54 0 0 1-4.86-1.33l-.35-.2-3.62.94.97-3.53-.23-.36a9.5 9.5 0 0 1-1.46-5.06c0-5.26 4.29-9.54 9.56-9.54a9.5 9.5 0 0 1 6.75 2.8 9.47 9.47 0 0 1 2.8 6.75c0 5.27-4.29 9.55-9.55 9.55Z"/><path fill="currentColor" d="M21.27 18.4c-.29-.14-1.74-.86-2.01-.96-.27-.1-.47-.15-.67.15-.2.29-.77.96-.95 1.16-.17.2-.35.22-.64.08-.29-.15-1.23-.46-2.34-1.45-.87-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.14-.18.19-.3.29-.5.1-.2.05-.37-.02-.51-.08-.15-.67-1.6-.91-2.19-.24-.57-.49-.49-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.29-1.03 1.01-1.03 2.46s1.06 2.86 1.2 3.06c.15.19 2.05 3.13 4.97 4.39.69.3 1.24.48 1.66.61.7.22 1.34.19 1.85.12.56-.09 1.72-.71 1.97-1.39.24-.68.24-1.26.17-1.39-.07-.12-.26-.2-.55-.34Z"/></svg>
+  </a>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <!-- Onda orgânica animada (referência: pareto.io). Grão aplicado via .hero::after -->
+      <svg class="hero-wave" viewBox="0 0 1736 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="waveFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#6B7C93"/>
+            <stop offset=".35" stop-color="#3A4658"/>
+            <stop offset="1" stop-color="#0E121A"/>
+          </linearGradient>
+          <linearGradient id="waveFillSide" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#7C8CA3"/>
+            <stop offset=".45" stop-color="#2E3847"/>
+            <stop offset="1" stop-color="#0E121A"/>
+          </linearGradient>
+          <filter id="waveMorph" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+            <feTurbulence type="fractalNoise" baseFrequency="0.0023 0.0025" numOctaves="2" seed="7" result="noise">
+              <animate attributeName="baseFrequency" values="0.0023 0.0025;0.0031 0.0019;0.0019 0.0029;0.0023 0.0025" dur="26s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G" result="warp">
+              <animate attributeName="scale" values="36;70;44;36" dur="20s" repeatCount="indefinite"/>
+            </feDisplacementMap>
+            <feGaussianBlur in="warp" stdDeviation="26"/>
+          </filter>
+        </defs>
+        <g filter="url(#waveMorph)">
+          <path class="wave-side" fill="url(#waveFillSide)" d="M1480 -120 C1420 120 1700 300 1650 500 C1610 660 1440 800 1400 1120 L1900 1120 L1900 -120 Z"/>
+          <path class="wave-hump" fill="url(#waveFill)" d="M-240 1180 C140 1100 400 860 680 760 C900 690 1120 720 1280 830 C1380 900 1420 1050 1470 1180 Z"/>
+        </g>
+      </svg>
+
+      <div class="hero-headline">
+        <h1 class="hero-h1">
+          <span class="hero-line">Transformação comercial com</span>
+          <span class="hero-line">inteligência artificial para</span>
+          <span class="rotator" aria-live="polite">
+            <span class="rotator-ghost" aria-hidden="true">construtoras e incorporadoras.</span>
+            <span class="rotator-word" id="rotatorWord">escritórios de arquitetura.</span>
+          </span>
+        </h1>
+        <div class="hero-actions">
+          <a class="btn-dark" href="#diagnostico">Solicite um diagnóstico <span class="arrow" aria-hidden="true"></span></a>
+          <a class="link-under" href="#metodo">Ver o método</a>
+        </div>
+      </div>
+
+      <div class="hero-wordmark">
+        <p class="wordmark">Eleve Makers</p>
+        <p class="wordmark-sub">IA e resultado para quem projeta</p>
+      </div>
+    </section>
+
+    <!-- ===== SEGMENTOS (equivalente ao bloco de logos) ===== -->
+    <section class="logos" id="segmentos" aria-label="Segmentos atendidos">
+      <div class="blueprint" aria-hidden="true"></div>
+      <div class="logos-fade" aria-hidden="true"></div>
+      <div class="logos-content">
+        <p class="logos-label">Feito para quem <strong>projeta, constrói e entrega</strong></p>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <span>Escritórios de arquitetura</span><span>Design de interiores</span><span>Construtoras e incorporadoras</span><span>Engenharia e reformas</span><span>Marcenarias e planejados</span><span>Lojas de acabamentos</span><span>Paisagismo</span><span>Iluminação e automação</span>
+            <span>Escritórios de arquitetura</span><span>Design de interiores</span><span>Construtoras e incorporadoras</span><span>Engenharia e reformas</span><span>Marcenarias e planejados</span><span>Lojas de acabamentos</span><span>Paisagismo</span><span>Iluminação e automação</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VALOR + STATS ===== -->
+    <section class="value" id="valor">
+      <div class="value-content">
+        <div class="value-copy">
+          <p>A Eleve Makers redesenha o comercial de escritórios de arquitetura e de todo o ecossistema da construção com método próprio e IA, transformando <strong>visita em briefing e briefing em contrato assinado.</strong></p>
+          <p>Com KPIs definidos no início do projeto e <strong>impacto validado ainda no primeiro ciclo de campanhas.</strong></p>
+        </div>
+
+        <!-- SUBSTITUA pelos números reais da empresa antes de publicar -->
+        <div class="stats-box">
+          <span class="cross cross-tl" aria-hidden="true"></span>
+          <span class="cross cross-tr" aria-hidden="true"></span>
+          <span class="cross cross-bl" aria-hidden="true"></span>
+          <span class="cross cross-br" aria-hidden="true"></span>
+          <div class="stat">
+            <span class="stat-num"><span data-count="100" data-suffix="%">100%</span></span>
+            <span class="stat-label">focado no ecossistema<br>da arquitetura</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num"><span data-count="4">4</span> frentes</span>
+            <span class="stat-label">site, CRM, IA e geração<br>de clientes, integradas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">&lt;<span data-count="1">1</span> min</span>
+            <span class="stat-label">para o primeiro contato<br>com o cliente, 24h</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num"><span data-count="1">1</span> métrica</span>
+            <span class="stat-label">o que importa:<br>contratos fechados</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROBLEMA ===== -->
+    <section class="problem" id="problema">
+      <div class="orb" aria-hidden="true"></div>
+      <div class="problem-content">
+        <div class="problem-headline">
+          <h2>O problema quase nunca é falta de cliente.</h2>
+          <p class="problem-line2">É o que acontece depois do <span class="grad">primeiro contato.</span></p>
+        </div>
+
+        <div class="problem-icons">
+          <div class="picon">
+            <svg viewBox="-66 -66 132 132" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke">
+                <circle cx="0" cy="0" r="56.57"/>
+                <g class="spin">
+                  <circle cx="-56.57" cy="0" r="8.4"/><circle cx="56.57" cy="0" r="8.4"/>
+                  <circle cx="0" cy="-56.57" r="8.4"/><circle cx="0" cy="56.57" r="8.4"/>
+                  <path d="M0 -44 V-14 M0 14 V44 M-44 0 H-14 M14 0 H44" stroke-dasharray="3.8 2.3"/>
+                </g>
+                <circle class="pulse" cx="0" cy="0" r="11.31" fill="currentColor" stroke="none"/>
+              </g>
+            </svg>
+            <p><strong>Resposta em segundos</strong><br>no lugar de horas ou dias</p>
+          </div>
+          <div class="picon">
+            <svg viewBox="-58.5 -48 117 96" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke">
+                <ellipse cx="0" cy="29" rx="57.5" ry="18.2"/>
+                <ellipse cx="0" cy="10.4" rx="57.5" ry="18.2"/>
+                <ellipse cx="0" cy="-11.9" rx="57.5" ry="18.2"/>
+                <ellipse class="bob" cx="0" cy="32" rx="19.3" ry="6.1" style="animation-delay:0s"/>
+                <ellipse class="bob" cx="0" cy="18.3" rx="19.3" ry="6.1" style="animation-delay:-.55s"/>
+                <ellipse class="bob" cx="0" cy="6" rx="19.3" ry="6.1" style="animation-delay:-1.1s"/>
+                <ellipse class="bob" cx="0" cy="-7.6" rx="19.3" ry="6.1" style="animation-delay:-1.65s"/>
+                <ellipse class="bob" cx="0" cy="-21.3" rx="19.3" ry="6.1" style="animation-delay:0s"/>
+                <ellipse class="bob" cx="0" cy="-33.7" rx="19.3" ry="6.1" style="animation-delay:-.55s"/>
+              </g>
+            </svg>
+            <p><span class="w500">Briefing qualificado</span><br>antes da primeira reunião</p>
+          </div>
+          <div class="picon">
+            <svg viewBox="-58.6 -58.6 117.2 117.2" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke">
+                <circle cx="0" cy="0" r="56.57"/>
+                <ellipse cx="0" cy="0" rx="56.57" ry="21"/>
+                <g class="merid"><ellipse cx="0" cy="0" rx="56.57" ry="56.57"/></g>
+                <circle cx="0" cy="0" r="36.7"/>
+                <g class="sway">
+                  <circle cx="21.5" cy="-29.7" r="3" fill="currentColor" stroke="none"/>
+                  <circle cx="21.5" cy="29.5" r="3" fill="currentColor" stroke="none"/>
+                  <circle cx="-22.5" cy="29.5" r="3" fill="currentColor" stroke="none"/>
+                  <circle cx="-22.5" cy="-29.7" r="3" fill="currentColor" stroke="none"/>
+                </g>
+              </g>
+            </svg>
+            <p><span class="w500">Mais contratos</span> com o<br>mesmo time de projeto</p>
+          </div>
+        </div>
+
+        <p class="problem-callout">Quase todo escritório chega pedindo mais tráfego ou um site novo. Na maior parte dos casos, o diagnóstico mostra que <strong>o gargalo estava depois do contato:</strong> mensagem sem resposta, briefing feito na reunião, proposta sem follow-up.</p>
+      </div>
+    </section>
+
+    <!-- ===== MÉTODO ===== -->
+    <section class="method" id="metodo">
+      <div class="method-content">
+        <div class="method-left">
+          <h2>Primeiro o funil.<br>Depois a IA.</h2>
+          <a class="btn-dark" href="#diagnostico">Faça seu diagnóstico <span class="arrow" aria-hidden="true"></span></a>
+        </div>
+
+        <div class="accordion" id="methodAccordion">
+          <div class="acc-item">
+            <button class="acc-head" type="button" aria-expanded="true" aria-controls="acc1" id="accb1">
+              <span class="acc-title">01 · Diagnóstico</span>
+              <span class="acc-plus" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 19 19"><g stroke="currentColor" stroke-width="1.8"><line x1="9.5" y1=".5" x2="9.5" y2="18.5"/><line x1=".5" y1="9.5" x2="18.5" y2="9.5"/></g></svg></span>
+            </button>
+            <div class="acc-body" id="acc1" role="region" aria-labelledby="accb1">
+              <div class="acc-inner"><p>Mapeamos do anúncio ao contrato: site, Instagram, WhatsApp, CRM e proposta. Encontramos onde o cliente esfria, antes do sintoma que o escritório enxerga.</p></div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc2" id="accb2">
+              <span class="acc-title">02 · Construção</span>
+              <span class="acc-plus" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 19 19"><g stroke="currentColor" stroke-width="1.8"><line x1="9.5" y1=".5" x2="9.5" y2="18.5"/><line x1=".5" y1="9.5" x2="18.5" y2="9.5"/></g></svg></span>
+            </button>
+            <div class="acc-body" id="acc2" role="region" aria-labelledby="accb2">
+              <div class="acc-inner"><p>Redesenho do fluxo comercial e implementação de site, CRM e agente de IA onde geram valor mensurável. Cada peça nasce integrada à próxima.</p></div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc3" id="accb3">
+              <span class="acc-title">03 · Aquisição</span>
+              <span class="acc-plus" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 19 19"><g stroke="currentColor" stroke-width="1.8"><line x1="9.5" y1=".5" x2="9.5" y2="18.5"/><line x1=".5" y1="9.5" x2="18.5" y2="9.5"/></g></svg></span>
+            </button>
+            <div class="acc-body" id="acc3" role="region" aria-labelledby="accb3">
+              <div class="acc-inner"><p>Campanhas em Google, Meta e Pinterest segmentadas por tipo de projeto, região e padrão de investimento. A IA qualifica cada contato antes de chegar ao arquiteto.</p></div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc4" id="accb4">
+              <span class="acc-title">04 · Ativo</span>
+              <span class="acc-plus" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 19 19"><g stroke="currentColor" stroke-width="1.8"><line x1="9.5" y1=".5" x2="9.5" y2="18.5"/><line x1=".5" y1="9.5" x2="18.5" y2="9.5"/></g></svg></span>
+            </button>
+            <div class="acc-body" id="acc4" role="region" aria-labelledby="accb4">
+              <div class="acc-inner"><p>O resultado vira capacidade do escritório: relatório semanal, previsibilidade de briefings e um comercial que funciona enquanto você está em obra.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOLUÇÕES (seção escura) ===== -->
+    <section class="solutions" id="solucoes">
+      <div class="dark-grid" aria-hidden="true"></div>
+      <div class="skyline" aria-hidden="true">
+        <svg viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax slice">
+          <defs>
+            <linearGradient id="skyfade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#54647A" stop-opacity="0"/>
+              <stop offset="1" stop-color="#54647A" stop-opacity=".55"/>
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#skyfade)" stroke-width="1">
+            <path d="M0 420 V300 H80 V240 H140 V300 H200 V180 H260 V220 H300 V120 H360 V260 H420 V200 H500 V90 H560 V150 H600 V240 H680 V60 H760 V200 H820 V160 H900 V280 H960 V110 H1040 V230 H1100 V170 H1180 V300 H1240 V140 H1320 V260 H1380 V220 H1440 V420"/>
+            <path d="M300 120 H360 M300 150 H360 M300 180 H360 M300 210 H360 M500 90 H560 M500 120 H560 M680 60 H760 M680 100 H760 M680 140 H760 M1040 230 H1100 M1320 260 H1380" opacity=".6"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="solutions-content">
+        <h2 class="sol-head">Mais projetos fechados.</h2>
+        <p class="sol-head2">Mais tempo para <span class="grad-light">projetar.</span></p>
+
+        <p class="sol-kicker">Soluções para</p>
+        <p class="sol-kicker2"><span class="grad-light">o ecossistema da arquitetura</span></p>
+
+        <!-- Desktop: tabs -->
+        <div class="tabs" id="solTabs">
+          <div class="tabs-list" role="tablist" aria-label="Frentes de solução">
+            <button class="tab is-on" role="tab" aria-selected="true" aria-controls="panel-0" id="tab-0" data-tab="0">Geração de clientes</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-1" id="tab-1" data-tab="1" tabindex="-1">Sites que vendem projeto</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" data-tab="2" tabindex="-1">CRM para escritórios</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" data-tab="3" tabindex="-1">Agentes de IA</button>
+            <div class="tabs-end"></div>
+          </div>
+
+          <div class="tabs-panels">
+            <div class="panel is-on" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="true"><span>Atrair quem tem verba para o projeto</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>Campanhas segmentadas por tipo de projeto, região e padrão de investimento, com criativos feitos a partir do seu portfólio.</p></div></div>
+              </div>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="false"><span>Reduzir o custo por briefing</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>Otimização semanal por canal e por oferta. O que não gera briefing com perfil é desligado.</p></div></div>
+              </div>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="false"><span>Entregar o cliente pronto para a reunião</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>Triagem por IA e por humano quando precisa. Chega ao arquiteto só quem tem metragem, prazo e verba compatíveis.</p></div></div>
+              </div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" hidden>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="true"><span>Transformar portfólio em pedido de orçamento</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>Estrutura, copy e velocidade pensadas para uma ação: solicitar o projeto. Portfólio organizado por tipo e ticket.</p></div></div>
+              </div>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="false"><span>Uma página para cada serviço</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>Residencial, comercial, interiores, reforma: cada página com a oferta certa e rastreamento completo do clique ao contato.</p></div></div>
+              </div>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="false"><span>Formulário de briefing integrado ao CRM</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>WhatsApp e formulário alimentam o funil automaticamente. Nenhum contato fica em uma caixa de e-mail.</p></div></div>
+              </div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="true"><span>Um funil no vocabulário do escritório</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>Briefing, visita técnica, proposta, contrato, projeto em andamento. Etapas que o time reconhece e usa de verdade.</p></div></div>
+              </div>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="false"><span>Follow-up automático de propostas</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>Proposta enviada e sem resposta gera lembrete, mensagem e tarefa. Nenhum orçamento esfria na fila.</p></div></div>
+              </div>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="false"><span>Painel de propostas e ticket médio</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>Taxa de fechamento, tempo de resposta e receita por tipo de projeto, visíveis para os sócios toda semana.</p></div></div>
+              </div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="true"><span>Atender em segundos, 24 horas</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>WhatsApp, Instagram e site respondidos no tom do escritório, enquanto você está em obra ou em reunião.</p></div></div>
+              </div>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="false"><span>Coletar o briefing e qualificar</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>Tipo de projeto, metragem, endereço, prazo e faixa de investimento. Só avança quem passa nos seus critérios.</p></div></div>
+              </div>
+              <div class="pgroup">
+                <button class="pitem" type="button" aria-expanded="false"><span>Agendar e registrar sozinho</span><span class="psign" aria-hidden="true">+</span></button>
+                <div class="pbody"><div><p>Marca a reunião na agenda do arquiteto, envia lembretes e cria a oportunidade no CRM com histórico completo.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile: accordion of the same content -->
+        <div class="sol-mobile" id="solMobile">
+          <div class="srow">
+            <button class="shead is-on" type="button" aria-expanded="true"><span>Geração de clientes</span><span class="ssign" aria-hidden="true">+</span></button>
+            <div class="sbody"><div class="smoves">
+              <div><p class="smlabel">Atrair quem tem verba para o projeto</p><p class="smbody">Campanhas segmentadas por tipo de projeto, região e padrão de investimento, com criativos feitos a partir do seu portfólio.</p></div>
+              <div><p class="smlabel">Reduzir o custo por briefing</p><p class="smbody">Otimização semanal por canal e por oferta. O que não gera briefing com perfil é desligado.</p></div>
+              <div><p class="smlabel">Entregar o cliente pronto para a reunião</p><p class="smbody">Chega ao arquiteto só quem tem metragem, prazo e verba compatíveis.</p></div>
+            </div></div>
+          </div>
+          <div class="srow">
+            <button class="shead" type="button" aria-expanded="false"><span>Sites que vendem projeto</span><span class="ssign" aria-hidden="true">+</span></button>
+            <div class="sbody"><div class="smoves">
+              <div><p class="smlabel">Transformar portfólio em pedido de orçamento</p><p class="smbody">Estrutura, copy e velocidade pensadas para uma ação: solicitar o projeto.</p></div>
+              <div><p class="smlabel">Uma página para cada serviço</p><p class="smbody">Residencial, comercial, interiores, reforma: cada página com a oferta certa e rastreamento completo.</p></div>
+              <div><p class="smlabel">Formulário de briefing integrado ao CRM</p><p class="smbody">WhatsApp e formulário alimentam o funil automaticamente.</p></div>
+            </div></div>
+          </div>
+          <div class="srow">
+            <button class="shead" type="button" aria-expanded="false"><span>CRM para escritórios</span><span class="ssign" aria-hidden="true">+</span></button>
+            <div class="sbody"><div class="smoves">
+              <div><p class="smlabel">Um funil no vocabulário do escritório</p><p class="smbody">Briefing, visita técnica, proposta, contrato. Etapas que o time reconhece e usa de verdade.</p></div>
+              <div><p class="smlabel">Follow-up automático de propostas</p><p class="smbody">Proposta sem resposta gera lembrete, mensagem e tarefa. Nenhum orçamento esfria.</p></div>
+              <div><p class="smlabel">Painel de propostas e ticket médio</p><p class="smbody">Taxa de fechamento, tempo de resposta e receita por tipo de projeto, toda semana.</p></div>
+            </div></div>
+          </div>
+          <div class="srow">
+            <button class="shead" type="button" aria-expanded="false"><span>Agentes de IA</span><span class="ssign" aria-hidden="true">+</span></button>
+            <div class="sbody"><div class="smoves">
+              <div><p class="smlabel">Atender em segundos, 24 horas</p><p class="smbody">WhatsApp, Instagram e site respondidos no tom do escritório, enquanto você está em obra.</p></div>
+              <div><p class="smlabel">Coletar o briefing e qualificar</p><p class="smbody">Tipo de projeto, metragem, prazo e faixa de investimento. Só avança quem passa nos seus critérios.</p></div>
+              <div><p class="smlabel">Agendar e registrar sozinho</p><p class="smbody">Marca a reunião na agenda do arquiteto e cria a oportunidade no CRM com histórico completo.</p></div>
+            </div></div>
+          </div>
+        </div>
+
+        <a class="link-arrow light" href="#diagnostico">Montar a estrutura do meu escritório <span class="arrow" aria-hidden="true"></span></a>
+      </div>
+    </section>
+
+    <!-- ===== CASES ===== -->
+    <section class="cases" id="cases">
+      <div class="mosaic mosaic-tl" aria-hidden="true"></div>
+      <div class="mosaic mosaic-tr" aria-hidden="true"></div>
+      <div class="mosaic mosaic-bl" aria-hidden="true"></div>
+      <div class="mosaic mosaic-br" aria-hidden="true"></div>
+
+      <div class="cases-content">
+        <div class="cases-headline">
+          <h2>Transformações</h2>
+          <p class="cases-line2">de <span class="grad">Resultado</span></p>
+        </div>
+
+        <!-- SUBSTITUA pelos números reais dos seus cases antes de publicar -->
+        <div class="cmarquee" aria-label="Resultados de projetos">
+          <div class="crow crow-a">
+            <div class="ctrack ctrack-left">
+              <div class="chalf">
+                <a class="ccard c1" href="#diagnostico"><span class="cnum">+250%</span><span class="ccopy"><span>briefings qualificados por mês</span><span>— <strong>Escritório de arquitetura, SP</strong></span></span></a>
+                <a class="ccard c2" href="#diagnostico"><span class="cnum">−59%</span><span class="ccopy"><span>custo por briefing em 90 dias</span><span>— <strong>Interiores de alto padrão</strong></span></span></a>
+                <a class="ccard c3" href="#diagnostico"><span class="cnum">15 min</span><span class="ccopy"><span>resposta a orçamentos, antes 2 dias</span><span>— <strong>Marcenaria, SC</strong></span></span></a>
+                <a class="ccard c1" href="#diagnostico"><span class="cnum">+71%</span><span class="ccopy"><span>propostas enviadas por mês</span><span>com follow-up automático no CRM</span></span></a>
+                <a class="ccard c2" href="#diagnostico"><span class="cnum">2,4x</span><span class="ccopy"><span>visitas técnicas agendadas</span><span>— <strong>Construtora, RJ</strong></span></span></a>
+                <a class="ccard c3" href="#diagnostico"><span class="cnum">−63%</span><span class="ccopy"><span>contatos fora do perfil</span><span>com qualificação por <strong>agente de IA</strong></span></span></a>
+              </div>
+              <div class="chalf" aria-hidden="true">
+                <a class="ccard c1" href="#diagnostico" tabindex="-1"><span class="cnum">+250%</span><span class="ccopy"><span>briefings qualificados por mês</span><span>— <strong>Escritório de arquitetura, SP</strong></span></span></a>
+                <a class="ccard c2" href="#diagnostico" tabindex="-1"><span class="cnum">−59%</span><span class="ccopy"><span>custo por briefing em 90 dias</span><span>— <strong>Interiores de alto padrão</strong></span></span></a>
+                <a class="ccard c3" href="#diagnostico" tabindex="-1"><span class="cnum">15 min</span><span class="ccopy"><span>resposta a orçamentos, antes 2 dias</span><span>— <strong>Marcenaria, SC</strong></span></span></a>
+                <a class="ccard c1" href="#diagnostico" tabindex="-1"><span class="cnum">+71%</span><span class="ccopy"><span>propostas enviadas por mês</span><span>com follow-up automático no CRM</span></span></a>
+                <a class="ccard c2" href="#diagnostico" tabindex="-1"><span class="cnum">2,4x</span><span class="ccopy"><span>visitas técnicas agendadas</span><span>— <strong>Construtora, RJ</strong></span></span></a>
+                <a class="ccard c3" href="#diagnostico" tabindex="-1"><span class="cnum">−63%</span><span class="ccopy"><span>contatos fora do perfil</span><span>com qualificação por <strong>agente de IA</strong></span></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="crow crow-b">
+            <div class="ctrack ctrack-right">
+              <div class="chalf">
+                <a class="ccard c2" href="#diagnostico"><span class="cnum">100%</span><span class="ccopy"><span>dos contatos no CRM</span><span>com briefing e histórico</span></span></a>
+                <a class="ccard c3" href="#diagnostico"><span class="cnum">48 s</span><span class="ccopy"><span>resposta média no WhatsApp</span><span>com <strong>agente de IA</strong></span></span></a>
+                <a class="ccard c1" href="#diagnostico"><span class="cnum">3x</span><span class="ccopy"><span>mais reuniões de briefing</span><span>— <strong>Paisagismo, MG</strong></span></span></a>
+                <a class="ccard c2" href="#diagnostico"><span class="cnum">−40%</span><span class="ccopy"><span>de falta em reuniões</span><span>com lembretes automáticos</span></span></a>
+                <a class="ccard c3" href="#diagnostico"><span class="cnum">+38%</span><span class="ccopy"><span>taxa de fechamento</span><span>— <strong>Engenharia e reformas</strong></span></span></a>
+                <a class="ccard c1" href="#diagnostico"><span class="cnum">1 painel</span><span class="ccopy"><span>do anúncio ao contrato</span><span>para os sócios, toda semana</span></span></a>
+              </div>
+              <div class="chalf" aria-hidden="true">
+                <a class="ccard c2" href="#diagnostico" tabindex="-1"><span class="cnum">100%</span><span class="ccopy"><span>dos contatos no CRM</span><span>com briefing e histórico</span></span></a>
+                <a class="ccard c3" href="#diagnostico" tabindex="-1"><span class="cnum">48 s</span><span class="ccopy"><span>resposta média no WhatsApp</span><span>com <strong>agente de IA</strong></span></span></a>
+                <a class="ccard c1" href="#diagnostico" tabindex="-1"><span class="cnum">3x</span><span class="ccopy"><span>mais reuniões de briefing</span><span>— <strong>Paisagismo, MG</strong></span></span></a>
+                <a class="ccard c2" href="#diagnostico" tabindex="-1"><span class="cnum">−40%</span><span class="ccopy"><span>de falta em reuniões</span><span>com lembretes automáticos</span></span></a>
+                <a class="ccard c3" href="#diagnostico" tabindex="-1"><span class="cnum">+38%</span><span class="ccopy"><span>taxa de fechamento</span><span>— <strong>Engenharia e reformas</strong></span></span></a>
+                <a class="ccard c1" href="#diagnostico" tabindex="-1"><span class="cnum">1 painel</span><span class="ccopy"><span>do anúncio ao contrato</span><span>para os sócios, toda semana</span></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="link-arrow" href="#diagnostico">Quero um resultado assim <span class="arrow" aria-hidden="true"></span></a>
+      </div>
+    </section>
+
+    <!-- ===== STACK / PARCEIROS ===== -->
+    <section class="partners" id="stack">
+      <div class="partners-content">
+        <span class="rule rule-top" aria-hidden="true"></span>
+        <span class="cross cross-tl" aria-hidden="true"></span>
+        <span class="cross cross-tr" aria-hidden="true"></span>
+        <span class="rule rule-bottom" aria-hidden="true"></span>
+        <span class="cross cross-bl" aria-hidden="true"></span>
+        <span class="cross cross-br" aria-hidden="true"></span>
+
+        <h2 class="partners-head">Construído com<br>quem define o padrão</h2>
+        <ul class="stack-list" aria-label="Plataformas utilizadas">
+          <li>Google Ads</li>
+          <li>Meta Ads</li>
+          <li>Pinterest Ads</li>
+          <li>WhatsApp Business API</li>
+          <li>Pipedrive · RD Station · HubSpot</li>
+          <li>Claude · OpenAI</li>
+          <li>Google Calendar</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="faq-content">
+        <h2 class="faq-head">O que os escritórios<br>perguntam antes de começar</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Vocês atendem só escritórios de arquitetura?<span class="fsign" aria-hidden="true">+</span></summary>
+            <p>Atendemos todo o ecossistema: escritórios de arquitetura e interiores, construtoras, engenharia, marcenarias, lojas de acabamentos, paisagismo, iluminação e automação. O método foi construído dentro desse mercado.</p>
+          </details>
+          <details>
+            <summary>Preciso contratar tudo ou posso começar por uma parte?<span class="fsign" aria-hidden="true">+</span></summary>
+            <p>Pode começar por uma frente. O mais comum é iniciar por geração de clientes ou pelo CRM. Como tudo é construído para se conectar, você adiciona as outras etapas quando fizer sentido.</p>
+          </details>
+          <details>
+            <summary>Em quanto tempo vejo resultado?<span class="fsign" aria-hidden="true">+</span></summary>
+            <p>Site e landing page ficam prontos em 2 a 4 semanas. Campanhas começam a gerar contatos na primeira semana no ar, e a otimização se consolida em 60 a 90 dias. Você acompanha tudo em relatório semanal.</p>
+          </details>
+          <details>
+            <summary>Meu ticket é alto. Tráfego pago funciona para alto padrão?<span class="fsign" aria-hidden="true">+</span></summary>
+            <p>Funciona quando segmentação, oferta e qualificação são feitas para esse público. Por isso a triagem por IA vem antes da reunião: você investe em mídia e só gasta tempo com quem pode contratar.</p>
+          </details>
+          <details>
+            <summary>A IA vai substituir o atendimento do escritório?<span class="fsign" aria-hidden="true">+</span></summary>
+            <p>Não. Ela tira de você o trabalho de responder rápido, coletar o briefing inicial e registrar tudo. O arquiteto passa a fazer reunião só com quem tem perfil, verba e interesse.</p>
+          </details>
+          <details>
+            <summary>Já tenho site e CRM. Vocês aproveitam?<span class="fsign" aria-hidden="true">+</span></summary>
+            <p>Sim. Fazemos um diagnóstico do que existe, integramos o que funciona e refazemos só o que está travando a conversão.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DIAGNÓSTICO (CTA + formulário) ===== -->
+    <section class="diag" id="diagnostico">
+      <div class="diag-content">
+        <div class="diag-copy">
+          <h2>Descubra onde o seu escritório está <span class="grad">perdendo projeto.</span></h2>
+          <p class="diag-sub">Em 30 minutos, mapeamos seu funil do anúncio ao contrato e mostramos o que mudar primeiro. Sem compromisso.</p>
+          <ul class="diag-list">
+            <li>Análise do site, do Instagram, das campanhas e do CRM atuais</li>
+            <li>Estimativa de briefings qualificados possíveis para o seu ticket</li>
+            <li>Plano de ação com prioridades</li>
+          </ul>
+          <p class="diag-contact">Prefere falar direto? <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" data-whatsapp>WhatsApp</a> · <a href="mailto:contato@elevemakers.com">contato@elevemakers.com</a></p>
+        </div>
+
+        <form class="form" id="leadForm" novalidate>
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="whatsapp">WhatsApp</label>
+              <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="empresa">Escritório ou empresa</label>
+              <input id="empresa" name="empresa" type="text" autocomplete="organization" required>
+            </div>
+            <div class="field">
+              <label for="segmento">Segmento</label>
+              <select id="segmento" name="segmento" required>
+                <option value="">Selecione</option>
+                <option>Escritório de arquitetura</option>
+                <option>Design de interiores</option>
+                <option>Construtora ou incorporadora</option>
+                <option>Engenharia e reformas</option>
+                <option>Marcenaria e planejados</option>
+                <option>Loja de acabamentos</option>
+                <option>Paisagismo</option>
+                <option>Iluminação e automação</option>
+                <option>Outro do ecossistema</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="faturamento">Faturamento mensal</label>
+              <select id="faturamento" name="faturamento" required>
+                <option value="">Selecione</option>
+                <option>Até R$ 50 mil</option>
+                <option>R$ 50 a 200 mil</option>
+                <option>R$ 200 a 500 mil</option>
+                <option>R$ 500 mil a 2 milhões</option>
+                <option>Acima de R$ 2 milhões</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="interesse">Principal interesse</label>
+              <select id="interesse" name="interesse" required>
+                <option value="">Selecione</option>
+                <option>Gerar clientes qualificados</option>
+                <option>Site ou landing page</option>
+                <option>CRM e automação</option>
+                <option>Agente de IA</option>
+                <option>Operação completa</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="mensagem">Conte rapidamente o desafio <span class="opt">(opcional)</span></label>
+            <textarea id="mensagem" name="mensagem" rows="3"></textarea>
+          </div>
+          <p class="form-error" id="formError" hidden>Preencha os campos obrigatórios para continuar.</p>
+          <button class="btn-dark btn-block" type="submit">Solicitar diagnóstico gratuito <span class="arrow" aria-hidden="true"></span></button>
+          <p class="form-note">Respondemos em até 1 dia útil. Seus dados ficam só com a gente.</p>
+          <div class="form-success" id="formSuccess" hidden>
+            <strong>Recebemos seu pedido.</strong>
+            <p>Um especialista vai entrar em contato em até 1 dia útil. Se preferir adiantar, fale com a gente agora no <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" data-whatsapp>WhatsApp</a>.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="footer-content">
+      <div class="footer-top">
+        <div>
+          <p class="footer-wordmark">Eleve Makers</p>
+          <p class="footer-tag">IA e resultado para quem projeta</p>
+        </div>
+        <nav class="footer-nav" aria-label="Rodapé">
+          <a href="#hero">Home</a>
+          <a href="#solucoes">Soluções</a>
+          <a href="#cases">Cases</a>
+          <a href="#metodo">Método</a>
+          <a href="#faq">FAQ</a>
+          <a href="#diagnostico">Diagnóstico</a>
+        </nav>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/elevemakers" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/elevemakers" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+          </a>
+          <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="WhatsApp" data-whatsapp>
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.03 4.5c-6.34 0-11.49 5.15-11.5 11.48 0 2.02.53 4 1.53 5.74L4.5 27.5l5.94-1.53a11.47 11.47 0 0 0 5.58 1.42h.01c6.33 0 11.48-5.15 11.49-11.48a11.4 11.4 0 0 0-3.36-8.13 11.4 11.4 0 0 0-8.13-3.38Zm0 21.02h-.01a9.54 9.54 0 0 1-4.86-1.33l-.35-.2-3.62.94.97-3.53-.23-.36a9.5 9.5 0 0 1-1.46-5.06c0-5.26 4.29-9.54 9.56-9.54a9.5 9.5 0 0 1 6.75 2.8 9.47 9.47 0 0 1 2.8 6.75c0 5.27-4.29 9.55-9.55 9.55Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-hair">
+        <span class="hplus" aria-hidden="true"></span>
+        <span class="hline" aria-hidden="true"></span>
+        <span class="hplus" aria-hidden="true"></span>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Eleve Makers. Todos os direitos reservados.</p>
+        <p class="footer-claim">elevemakers.com · IA para fechar mais projetos.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

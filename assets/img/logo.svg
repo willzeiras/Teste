@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="40" viewBox="0 0 200 40" fill="none" role="img" aria-label="Eleve Makers">
+  <path d="M4 34 L20 6 L36 34 H28 L20 20 L12 34 Z" fill="#222222"/>
+  <path d="M16 34 L20 27 L24 34 Z" fill="#222222" opacity=".45"/>
+  <text x="46" y="27" font-family="Fraunces, Georgia, serif" font-size="20" fill="#222222">Eleve Makers</text>
+</svg>
