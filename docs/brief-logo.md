@@ -10,7 +10,11 @@ Crie a identidade de marca (símbolo + wordmark) da **Eleve Makers**, uma empres
 
 A marca deve seguir a mesma gramática visual do símbolo da Pareto (pareto.io): um **módulo 2x2 de quadrados**, em que cada quadrante recebe uma operação geométrica diferente (um bloco sólido com recorte, um quadrante com seta/dobra diagonal, um com chanfro no canto, um em moldura com um quadrado menor no miolo), tudo em **dois tons de cinza-chumbo** (#1C1C1C e #484848), sem gradiente, sem cor, com cantos retos e ritmo modular. A composição precisa ser **própria da Eleve**, não uma cópia: use a linguagem, não o desenho.
 
-## Direção já explorada (ponto de partida, pode evoluir)
+## Direção escolhida (refinar, não substituir)
+
+Monograma **EM em traço técnico**: as duas letras desenhadas em linha única de espessura constante, cantos retos, E com três braços e M com o vértice central a meia altura, sobre **linhas de construção** finas (três horizontais e três verticais, alinhadas aos limites e ao eixo médio das letras, opacidade em torno de 40%), como um desenho de corte ou uma planta em elaboração. As linhas de construção somem naturalmente no tamanho pequeno e o EM continua legível sozinho. Refine proporções, espessura e a relação entre letras e linhas; pode propor marcas de registro em cruz nos cruzamentos.
+
+## Direção alternativa já explorada (segunda opção)
 
 Módulo 2x2 com espaçamento igual entre os quadrantes:
 
