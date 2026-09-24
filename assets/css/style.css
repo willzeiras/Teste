@@ -790,7 +790,7 @@ h1, h2, .display {
 
 /* ═══ Ferramenta (Process Flow AI) ═══ */
 .ferramenta { padding: 96px 0; border-top: 1px solid rgba(0,0,0,.08); }
-.ferramenta-inner { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+.ferramenta-inner { max-width: 1100px; margin: 0 auto; padding-inline: var(--gutter); display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
 .ferramenta h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.08; margin: 12px 0 18px; }
 .ferramenta p { font-size: 17px; line-height: 1.6; max-width: 56ch; }
 .ferramenta-actions { display: flex; align-items: center; gap: 28px; margin-top: 28px; flex-wrap: wrap; }
