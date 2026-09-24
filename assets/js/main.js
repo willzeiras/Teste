@@ -9,7 +9,7 @@
   /* ---------- CONFIGURAÇÃO (edite aqui) ---------- */
   var CONFIG = {
     // Número do WhatsApp comercial no formato internacional, só dígitos (55 + DDD + número).
-    whatsapp: '5500000000000',
+    whatsapp: '5511939213329',
     // Mensagem inicial ao clicar no WhatsApp.
     whatsappGreeting: 'Olá! Vim pelo site da Eleve Makers e quero um diagnóstico do meu escritório.',
     // Endpoint opcional para receber o formulário (ex.: webhook do CRM, Formspree, Make, n8n).
