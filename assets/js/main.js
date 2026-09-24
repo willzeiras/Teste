@@ -17,15 +17,15 @@
     formEndpoint: '',
     // Palavras que giram no título do hero.
     rotatorWords: [
-      'escritórios de arquitetura.',
-      'design de interiores.',
-      'construtoras e incorporadoras.',
-      'marcenarias e planejados.',
-      'engenharia e reformas.',
-      'lojas de acabamentos.',
-      'paisagismo.'
+      'arquitetura.',
+      'interiores.',
+      'construtoras.',
+      'revestimentos.',
+      'marcenarias.',
+      'showrooms.',
+      'engenharia.'
     ],
-    rotatorInterval: 2600
+    rotatorInterval: 2800
   };
 
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

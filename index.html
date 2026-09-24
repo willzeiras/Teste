@@ -52,8 +52,7 @@
         <a class="nav-link" href="#hero">Home</a>
         <a class="nav-link" href="#solucoes">Soluções</a>
         <a class="nav-link" href="#cases">Cases</a>
-        <a class="nav-link" href="#metodo">Método</a>
-        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="#ferramenta">Ferramenta</a>
       </div>
       <a class="nav-cta" href="#diagnostico">Solicite um diagnóstico</a>
       <button class="nav-burger" id="navBurger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navSheet">
@@ -79,7 +78,10 @@
       <a class="sheet-link" href="#cases">Cases</a>
       <a class="sheet-link" href="#metodo">Método</a>
       <a class="sheet-link" href="#faq">FAQ</a>
-    </nav>
+      <a href="#ferramenta">Ferramenta</a>
+      <a href="https://app.elevemakers.com/login">Entrar</a>
+      <a href="https://app.elevemakers.com/cadastro">Criar conta grátis</a>
+</nav>
     <a class="sheet-cta" href="#diagnostico">Solicite um diagnóstico</a>
   </div>
 
@@ -91,53 +93,47 @@
   <main>
     <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
-      <!-- Onda orgânica animada (referência: pareto.io). Grão aplicado via .hero::after -->
-      <svg class="hero-wave" viewBox="0 0 1736 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <!-- Onda com borda de grão (pontilhado) — forma vetorial + filtro de dithering. Anima só o transform do SVG. -->
+      <svg class="hero-wave" viewBox="0 0 1440 1210" preserveAspectRatio="xMidYMin slice" aria-hidden="true" focusable="false">
         <defs>
-          <linearGradient id="waveFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#6B7C93"/>
-            <stop offset=".35" stop-color="#3A4658"/>
-            <stop offset="1" stop-color="#0E121A"/>
-          </linearGradient>
-          <linearGradient id="waveFillSide" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#7C8CA3"/>
-            <stop offset=".45" stop-color="#2E3847"/>
-            <stop offset="1" stop-color="#0E121A"/>
-          </linearGradient>
-          <filter id="waveMorph" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
-            <feTurbulence type="fractalNoise" baseFrequency="0.0023 0.0025" numOctaves="2" seed="7" result="noise">
-              <animate attributeName="baseFrequency" values="0.0023 0.0025;0.0031 0.0019;0.0019 0.0029;0.0023 0.0025" dur="26s" repeatCount="indefinite"/>
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G" result="warp">
-              <animate attributeName="scale" values="36;70;44;36" dur="20s" repeatCount="indefinite"/>
-            </feDisplacementMap>
-            <feGaussianBlur in="warp" stdDeviation="26"/>
+          <!-- borda pontilhada (grão): alpha suavizado + ruído → limiar binário -->
+          <filter id="dither" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="22" result="fatSoft"/>
+            <feComponentTransfer in="fatSoft" result="fat"><feFuncA type="linear" slope="3.2"/></feComponentTransfer>
+            <feGaussianBlur in="SourceAlpha" stdDeviation="38" result="soft"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.78" numOctaves="2" seed="11" stitchTiles="stitch" result="noise"/>
+            <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1 0 0 0 0" result="noiseA"/>
+            <feComposite in="soft" in2="noiseA" operator="arithmetic" k1="0" k2="1" k3="1" k4="-0.48" result="sum"/>
+            <feComponentTransfer in="sum" result="mask"><feFuncA type="discrete" tableValues="0 1"/></feComponentTransfer>
+            <feComposite in="fat" in2="mask" operator="in"/>
           </filter>
+          <!-- sombreado "tubo": borda mais clara, miolo escuro -->
+          <filter id="core" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="42"/></filter>
         </defs>
-        <g filter="url(#waveMorph)">
-          <path class="wave-side" fill="url(#waveFillSide)" d="M1480 -120 C1420 120 1700 300 1650 500 C1610 660 1440 800 1400 1120 L1900 1120 L1900 -120 Z"/>
-          <path class="wave-hump" fill="url(#waveFill)" d="M-240 1180 C140 1100 400 860 680 760 C900 690 1120 720 1280 830 C1380 900 1420 1050 1470 1180 Z"/>
+        <g filter="url(#dither)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!-- a faixa: uma linha central com traço grosso (mesma espessura da referência) -->
+          <path class="ribbon-edge" d="M-140 905 C300 830 540 770 720 762 C960 748 1160 680 1285 510 C1370 390 1385 200 1300 -100"
+                stroke="#9AA6B9" stroke-width="300"/>
+          <path class="ribbon-core" d="M-140 905 C300 830 540 770 720 762 C960 748 1160 680 1285 510 C1370 390 1385 200 1300 -100"
+                stroke="#10151F" stroke-width="165" filter="url(#core)"/>
         </g>
       </svg>
 
       <div class="hero-headline">
         <h1 class="hero-h1">
           <span class="hero-line">Transformação comercial com</span>
-          <span class="hero-line">inteligência artificial para</span>
-          <span class="rotator" aria-live="polite">
-            <span class="rotator-ghost" aria-hidden="true">construtoras e incorporadoras.</span>
-            <span class="rotator-word" id="rotatorWord">escritórios de arquitetura.</span>
+          <span class="hero-line">inteligência artificial para
+            <span class="rotator" aria-live="polite">
+              <span class="rotator-ghost" aria-hidden="true">revestimentos.</span>
+              <span class="rotator-word" id="rotatorWord">arquitetura.</span>
+            </span>
           </span>
         </h1>
-        <div class="hero-actions">
-          <a class="btn-dark" href="#diagnostico">Solicite um diagnóstico <span class="arrow" aria-hidden="true"></span></a>
-          <a class="link-under" href="#metodo">Ver o método</a>
-        </div>
       </div>
 
       <div class="hero-wordmark">
         <p class="wordmark">Eleve Makers</p>
-        <p class="wordmark-sub">IA e resultado para quem projeta</p>
+        <p class="wordmark-sub">IA e resultado para quem projeta, constrói e entrega</p>
       </div>
     </section>
 
@@ -265,6 +261,7 @@
           <li><a class="client" href="https://travertinonavona.com.br/" target="_blank" rel="noopener"><span class="client-name">Travertino Navona</span><span class="client-seg mono">pedras e revestimentos</span></a></li>
           <li><a class="client" href="https://studiomeraki.com.br/" target="_blank" rel="noopener"><span class="client-name">Studio Meraki</span><span class="client-seg mono">arquitetura e design</span></a></li>
           <li><a class="client" href="https://www.quadra.com.vc/" target="_blank" rel="noopener"><span class="client-name">Quadra Engenharia</span><span class="client-seg mono">construtora · alto padrão</span></a></li>
+          <li><a class="client" href="https://avivamoveis.com.br/" target="_blank" rel="noopener"><span class="client-name">Aviva Móveis</span><span class="client-seg mono">marcenaria e planejados</span></a></li>
         </ul>
         <p class="logos-label logos-label-2">Feito para quem <strong>projeta, constrói e entrega</strong></p>
         <div class="marquee" aria-hidden="true">
@@ -603,6 +600,13 @@
             <span class="case-front">Site institucional e páginas de empreendimentos</span>
             <span class="case-link">quadra.com.vc <span class="arrow" aria-hidden="true"></span></span>
           </a>
+          <a class="case c2" href="https://avivamoveis.com.br/" target="_blank" rel="noopener">
+            <span class="case-tag mono">Marcenaria e planejados · SP</span>
+            <span class="case-name">Aviva Móveis</span>
+            <span class="case-desc">Marcenaria de alto padrão com mais de 30 anos: móveis planejados sob medida, arquiteto incluso no projeto e entrega em até 15 dias.</span>
+            <span class="case-front">Transformação comercial com IA</span>
+            <span class="case-link">avivamoveis.com.br <span class="arrow" aria-hidden="true"></span></span>
+          </a>
         </div>
 
         <a class="link-arrow" href="#diagnostico">Quero um projeto assim <span class="arrow" aria-hidden="true"></span></a>
@@ -633,7 +637,93 @@
     </section>
 
     <!-- ===== FAQ ===== -->
-    <section class="faq" id="faq">
+      <!-- ═══ FERRAMENTA: Process Flow AI ═══ -->
+  <section class="ferramenta" id="ferramenta">
+    <div class="ferramenta-inner">
+      <div class="ferramenta-head">
+        <span class="eyebrow">Ferramenta gratuita · app.elevemakers.com</span>
+        <h2>Desenhe a operação do seu escritório, loja ou obra — e veja onde a IA entra.</h2>
+        <p>
+          O <strong>Process Flow AI</strong> é a nossa ferramenta de diagnóstico de operação, feita só para
+          arquitetura, construção e interiores. Você conversa com a IA como se fosse um consultor que conhece
+          showroom e obra: ela entrevista você, desenha o processo na tela em tempo real e, etapa por etapa,
+          aponta o que trava a operação e o que pode ser automatizado — com impacto, esforço e ganho estimado.
+        </p>
+        <div class="ferramenta-actions">
+          <a class="btn-dark" href="https://app.elevemakers.com/cadastro">Criar conta grátis <span class="arrow" aria-hidden="true"></span></a>
+          <a class="link-arrow" href="https://app.elevemakers.com/login">Já tenho conta <span class="arrow" aria-hidden="true"></span></a>
+        </div>
+      </div>
+
+      <div class="ferramenta-grid">
+        <article class="ferramenta-card">
+          <span class="ferramenta-num">01</span>
+          <h3>Fluxo de processo</h3>
+          <p class="ferramenta-what"><strong>O que é:</strong> o desenho passo a passo de um processo da sua operação — orçamento a partir do projeto, medição, pedido à fábrica, instalação, assistência pós-obra.</p>
+          <p><strong>Objetivo:</strong> enxergar o processo inteiro, com quem faz cada etapa e quanto tempo leva, em vez de ele viver só na cabeça de quem executa.</p>
+          <p class="ferramenta-ai"><strong>Como a IA ajuda:</strong> marca os gargalos (retrabalho de medição, orçamento manual, liberação de obra pelo WhatsApp) e sugere, em cada etapa, o que dá pra automatizar e quanto isso rende.</p>
+        </article>
+
+        <article class="ferramenta-card">
+          <span class="ferramenta-num">02</span>
+          <h3>Processo por áreas</h3>
+          <p class="ferramenta-what"><strong>O que é:</strong> o mesmo processo visto em raias — Arquiteto, Showroom, Orçamentos, Compras, Obra — mostrando em que ponto o trabalho troca de mão.</p>
+          <p><strong>Objetivo:</strong> encontrar as trocas entre áreas onde a informação se perde: da especificação para a venda, da venda para a medição, do pedido para a fábrica.</p>
+          <p class="ferramenta-ai"><strong>Como a IA ajuda:</strong> dá atenção especial aos handoffs — onde um cliente fica sem retorno, um pedido atrasa sem aviso — e propõe o agente ou a automação que faz a ponte entre as áreas.</p>
+        </article>
+
+        <article class="ferramenta-card">
+          <span class="ferramenta-num">03</span>
+          <h3>Organograma</h3>
+          <p class="ferramenta-what"><strong>O que é:</strong> a estrutura da empresa — cargos, pessoas, áreas e, o mais importante, <em>o que cada cargo executa</em> no dia a dia.</p>
+          <p><strong>Objetivo:</strong> ver com clareza quem responde por cada frente e onde há função duplicada, sobrecarga ou área sem dono (o pós-obra sem responsável é clássico no setor).</p>
+          <p class="ferramenta-ai"><strong>Como a IA ajuda:</strong> entrevista você cargo a cargo, registra as funções e aponta as sobreposições e os buracos da estrutura. O organograma pronto vira base para os outros desenhos.</p>
+        </article>
+
+        <article class="ferramenta-card">
+          <span class="ferramenta-num">04</span>
+          <h3>Squads da operação</h3>
+          <p class="ferramenta-what"><strong>O que é:</strong> a operação reorganizada em squads por entrega — Especificação &amp; Arquitetos, Vendas &amp; Orçamentos, Medição &amp; Instalação, Pós-obra — com missão, pessoas, rituais e indicadores.</p>
+          <p><strong>Objetivo:</strong> sair da estrutura por departamento e organizar o time em volta do que precisa ser entregue ao cliente, com dono claro para cada resultado.</p>
+          <p class="ferramenta-ai"><strong>Como a IA ajuda:</strong> propõe a divisão, aloca as pessoas reais do seu organograma, alerta sobre quem está em squads demais e define a <em>camada de IA de cada squad</em>: o agente ou automação que entra como membro digital do time.</p>
+        </article>
+      </div>
+
+      <div class="ferramenta-how">
+        <div class="ferramenta-how-head">
+          <span class="eyebrow">Como a IA mostra o que otimizar</span>
+          <h3>Do desenho ao plano de automação, em uma conversa.</h3>
+        </div>
+        <ol class="ferramenta-steps">
+          <li>
+            <span class="ferramenta-step-n">1</span>
+            <strong>Você descreve, a IA entrevista.</strong>
+            <span>Conte como funciona hoje — ou parta de um modelo pronto do setor (venda por especificação, da medição à instalação, assistência pós-obra, compras e importação). A IA faz uma ou duas perguntas por vez e desenha enquanto você responde.</span>
+          </li>
+          <li>
+            <span class="ferramenta-step-n">2</span>
+            <strong>O processo ganha forma — e os gargalos aparecem.</strong>
+            <span>Cada etapa recebe responsável, prazo e descrição. A IA destaca onde o trabalho trava: conferência manual, dependência de uma pessoa só, informação sem registro, cliente esperando resposta.</span>
+          </li>
+          <li>
+            <span class="ferramenta-step-n">3</span>
+            <strong>Oportunidades de IA, priorizadas.</strong>
+            <span>Para cada etapa, o que a IA faria no seu lugar, a ferramenta indicada, o impacto, o esforço e o ganho estimado — "orçamento de dois dias vira vinte minutos", "zero viagem perdida de instalação". Uma matriz impacto × esforço mostra por onde começar.</span>
+          </li>
+          <li>
+            <span class="ferramenta-step-n">4</span>
+            <strong>Você edita, exporta e leva adiante.</strong>
+            <span>Ajuste no chat ou direto no desenho, exporte em PNG e relatório, e — se quiser que a gente implante — o diagnóstico já está pronto para virar projeto.</span>
+          </li>
+        </ol>
+        <div class="ferramenta-actions">
+          <a class="btn-dark" href="https://app.elevemakers.com/cadastro">Começar agora em app.elevemakers.com <span class="arrow" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
       <div class="faq-content">
         <h2 class="faq-head">O que os escritórios<br>perguntam antes de começar</h2>
         <div class="faq-list">
@@ -795,7 +885,7 @@
       <div class="footer-top">
         <div>
           <p class="footer-wordmark">Eleve Makers</p>
-          <p class="footer-tag">IA e resultado para quem projeta</p>
+          <p class="footer-tag">IA e resultado para quem projeta, constrói e entrega</p>
         </div>
         <nav class="footer-nav" aria-label="Rodapé">
           <a href="#hero">Home</a>
@@ -804,6 +894,7 @@
           <a href="#metodo">Método</a>
           <a href="#faq">FAQ</a>
           <a href="#diagnostico">Diagnóstico</a>
+          <a href="https://app.elevemakers.com">Ferramenta</a>
         </nav>
         <div class="footer-social">
           <a href="https://www.instagram.com/willzeiras" target="_blank" rel="noopener" aria-label="Instagram">

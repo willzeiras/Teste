@@ -1,0 +1,30 @@
+version: "3.9"
+
+networks:
+  network_public:
+    external: true
+
+services:
+  web:
+    image: site-elevemakers:latest
+    networks: [network_public]
+    deploy:
+      replicas: 1
+      restart_policy: { condition: on-failure, delay: 5s }
+      resources:
+        limits: { memory: 64M }
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=network_public"
+        - "traefik.http.routers.site.rule=Host(`elevemakers.com`) || Host(`www.elevemakers.com`)"
+        - "traefik.http.routers.site.entrypoints=websecure"
+        - "traefik.http.routers.site.tls.certresolver=letsencryptresolver"
+        - "traefik.http.routers.site.service=site"
+        - "traefik.http.routers.site.middlewares=site-www@docker"
+        - "traefik.http.services.site.loadbalancer.server.port=80"
+        - "traefik.http.routers.site-http.rule=Host(`elevemakers.com`) || Host(`www.elevemakers.com`)"
+        - "traefik.http.routers.site-http.entrypoints=web"
+        - "traefik.http.routers.site-http.middlewares=redirect-https@docker"
+        - "traefik.http.middlewares.site-www.redirectregex.regex=^https://www\\.elevemakers\\.com/(.*)"
+        - "traefik.http.middlewares.site-www.redirectregex.replacement=https://elevemakers.com/$${1}"
+        - "traefik.http.middlewares.site-www.redirectregex.permanent=true"
