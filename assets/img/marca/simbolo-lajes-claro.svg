@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- TL: bloco com recorte em L (módulo) -->
+  <polygon fill="#F4F4F4" points="0,0 46,0 46,30 30,30 30,46 0,46"/>
+  <!-- TR: seta para o alto (eleve) -->
+  <polygon fill="#AEB6C2" points="54,0 100,0 100,46 88,46 88,20 62,46 54,38 80,12 54,12"/>
+  <!-- BL: três lajes (E / andares) -->
+  <rect fill="#AEB6C2" x="0" y="54" width="46" height="10"/>
+  <rect fill="#AEB6C2" x="0" y="72" width="46" height="10"/>
+  <rect fill="#AEB6C2" x="0" y="90" width="46" height="10"/>
+  <!-- BR: moldura com miolo (módulo construtivo) -->
+  <path fill="#F4F4F4" fill-rule="evenodd" d="M54 54H100V100H54ZM62 62V92H92V62Z"/>
+  <rect fill="#F4F4F4" x="71" y="71" width="12" height="12"/>
+</svg>
