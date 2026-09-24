@@ -812,7 +812,7 @@ h1, h2, .display {
 .ferramenta-step-n { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(242,242,242,.35); display: inline-flex; align-items: center; justify-content: center; font-family: var(--mono, monospace); font-size: 12px; color: #F2F2F2; }
 .ferramenta-how .ferramenta-actions { margin-top: 36px; }
 .ferramenta-how .btn-dark { background: #F2F2F2; color: var(--dark); }
-.ferramenta-how .btn-dark .arrow { --arrow-color: var(--dark); }
+.ferramenta-how .btn-dark .arrow, .ferramenta-how .btn-dark .arrow::before, .ferramenta-how .btn-dark .arrow::after { --arrow-color: var(--dark); }
 .ferramenta-how .btn-dark:hover { background: #fff; }
 @media (max-width: 900px) {
   .ferramenta { padding: 72px 0; }
