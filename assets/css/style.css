@@ -254,15 +254,6 @@ h1, h2, .display {
   will-change: transform;
 }
 @keyframes wavedrift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-1.2%, .8%, 0) scale(1.035); } }
-/* grão fino sobre a capa inteira (como na referência) */
-.hero::after {
-  content: ""; position: absolute; inset: 0 0 -700px 0; z-index: 1; pointer-events: none;
-  opacity: .32; mix-blend-mode: soft-light;
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  background-size: 220px 220px;
-}
 .hero-headline { position: relative; z-index: 3; text-align: center; max-width: 1180px; margin-top: -22vh; }
 .hero-h1 {
   display: flex; flex-direction: column; align-items: center;
@@ -833,3 +824,10 @@ html, body { overflow-x: clip; }
 
 /* seção de diagnóstico após a capa: oculta — o formulário vive em #contato */
 
+
+/* grão fino uniforme em toda a página (sem blend: sem emendas entre seções) */
+body {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 220px 220px;
+}
+.hero { background: transparent; }
