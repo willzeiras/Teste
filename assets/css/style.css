@@ -580,7 +580,7 @@ h1, h2, .display {
 
 /* ---------- Diagnóstico / formulário ---------- */
 .diag { background: var(--cream); padding-block: 110px 120px; }
-.diag-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); gap: 80px; align-items: start; }
+.diag-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 680px); gap: 64px; align-items: start; }
 .diag-copy h2 { font-size: clamp(30px, 3.8vw, 52px); }
 .diag-sub { margin-top: 24px; font-size: 19px; line-height: 1.45; color: var(--ink-2); max-width: 520px; }
 .diag-list { margin-top: 28px; display: grid; gap: 12px; }
@@ -592,25 +592,60 @@ h1, h2, .display {
 .diag-contact { margin-top: 32px; font-size: 15px; color: var(--ink-2); }
 .diag-contact a { text-decoration: underline; text-underline-offset: 4px; color: var(--ink); }
 
-.form { display: grid; gap: 16px; padding: 32px; background: #fff; border: 1px solid var(--line-2); }
-.field { display: grid; gap: 6px; }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.field label { font-size: 13px; font-weight: 400; letter-spacing: .02em; text-transform: uppercase; color: var(--ink-2); }
-.field .opt { text-transform: none; letter-spacing: 0; color: var(--on-dark-3); }
-.field input, .field select, .field textarea {
-  width: 100%; font: inherit; font-weight: 400; font-size: 16px; color: var(--ink);
-  padding: 12px 14px; background: var(--grey); border: 1px solid transparent; border-radius: 6px;
-  transition: border-color .2s, background .2s;
+/* ---------- Formulário em passos (diagnóstico) ---------- */
+.quote { background: var(--grey); padding-block: 72px 96px; position: relative; }
+.quote-content { position: relative; width: 100%; max-width: 1400px; margin: 0 auto; padding-inline: var(--gutter); }
+.quote__inner { max-width: 943px; margin: 0 auto; }
+.diag .quote__inner { max-width: none; margin: 0; }
+.quote__box {
+  position: relative; background: var(--grey); border: 1px solid var(--line);
+  padding: 36px 44px 32px;
+  box-shadow: 0 30px 60px -40px rgba(17,22,30,.35);
 }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--slate); background: #fff; }
-.field .is-invalid { border-color: #B23A3A; }
-.field textarea { resize: vertical; min-height: 84px; }
-.form-error { font-size: 14px; color: #B23A3A; }
-.form-note { font-size: 13px; color: var(--on-dark-3); text-align: center; }
-.form-success { padding: 18px; border: 1px solid var(--slate); background: var(--grey); font-size: 15px; line-height: 1.5; }
-.form-success strong { display: block; font-weight: 500; margin-bottom: 4px; }
-.form-success a { text-decoration: underline; }
-.form.is-sent > :not(.form-success) { display: none; }
+.quote__step-label { font-size: 12px; letter-spacing: .04em; color: var(--slate); margin-bottom: 18px; }
+.quote__step { display: none; }
+.quote__step.is-active { display: block; animation: pin .4s var(--ease) both; }
+.quote__title { font-family: var(--display); font-weight: 400; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.1; color: var(--ink-3); text-wrap: balance; }
+.quote__sub { margin-top: 10px; font-size: 16px; line-height: 1.45; color: var(--ink-2); max-width: 60ch; }
+.quote__sub a { text-decoration: underline; text-underline-offset: 4px; color: var(--ink); }
+.quote__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 28px; margin-top: 28px; }
+.quote__field { display: grid; gap: 8px; align-content: start; }
+.quote__field--full { grid-column: 1 / -1; }
+.quote__label { font-size: 13px; font-weight: 400; letter-spacing: .02em; text-transform: uppercase; color: var(--ink-2); }
+.quote__input, .quote__select {
+  width: 100%; font: inherit; font-weight: 400; font-size: 16px; color: var(--ink);
+  padding: 12px 14px; background: #fff; border: 1px solid var(--line-2); border-radius: 6px;
+  transition: border-color .2s;
+}
+.quote__input:focus, .quote__select:focus { outline: none; border-color: var(--dark); }
+.quote__input.is-invalid, .quote__select.is-invalid { border-color: #B23A3A; }
+.quote__range { width: 100%; margin: 14px 0 0; accent-color: var(--dark); height: 24px; }
+.quote__value { font-family: var(--display); font-size: 30px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.quote__unit { font-family: var(--body); font-size: 14px; font-weight: 400; color: var(--ink-2); }
+.quote__chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.chip {
+  padding: 12px 18px; border: 1px solid var(--line-2); border-radius: 999px; background: #fff;
+  font-weight: 400; font-size: 15px; color: var(--ink); transition: background .25s, color .25s, border-color .25s;
+}
+.chip:hover { border-color: var(--dark); }
+.chip.is-on { background: var(--dark); border-color: var(--dark); color: var(--on-dark); }
+.quote__note { margin-top: 16px; font-size: 13px; color: var(--on-dark-3); }
+.quote__nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line-2); }
+.quote__back { font-weight: 300; font-size: 16px; color: var(--ink-2); padding: 10px 0; visibility: hidden; }
+.quote__back.is-visible { visibility: visible; }
+.quote__back:hover { color: var(--ink); }
+.quote__next {
+  display: inline-flex; align-items: center; gap: 12px; padding: 13px 24px; border-radius: 10px;
+  background: var(--dark); color: var(--on-dark); font-weight: 400; font-size: 16px; line-height: 1;
+  transition: background .3s, opacity .3s;
+}
+.quote__next:hover:not(:disabled) { background: var(--dark-3); }
+.quote__next:disabled { opacity: .35; cursor: not-allowed; }
+.quote__success { text-align: center; padding-block: 16px; }
+.quote__check { width: 56px; height: 56px; margin: 0 auto 20px; border-radius: 50%; background: var(--dark); color: var(--on-dark); display: flex; align-items: center; justify-content: center; font-size: 26px; }
+.quote__success .quote__sub { margin-inline: auto; }
+.quote__box.is-done .quote__nav, .quote__box.is-done .quote__step-label { display: none; }
+.quote__error { margin-top: 12px; font-size: 14px; color: #B23A3A; }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--dark-2); color: var(--on-dark); padding-block: 88px 40px; }
@@ -725,6 +760,13 @@ h1, h2, .display {
   .faq-list summary { font-size: 18px; padding: 18px 0; }
   .faq-list details p { padding-right: 30px; }
 
+  .quote { padding-block: 48px 56px; }
+  .quote__back:not(.is-visible) { display: none; }
+  .quote__box { padding: 24px 18px 22px; }
+  .quote__grid { grid-template-columns: 1fr; gap: 18px; margin-top: 22px; }
+  .quote__nav { flex-direction: column-reverse; align-items: stretch; }
+  .quote__next { justify-content: center; }
+  .quote__back { text-align: center; }
   .diag { padding-block: 70px 80px; }
   .diag-content { grid-template-columns: 1fr; gap: 40px; }
   .form { padding: 22px 18px; }

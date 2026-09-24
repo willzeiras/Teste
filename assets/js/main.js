@@ -229,81 +229,151 @@
     });
   });
 
-  /* ---------- Formulário de diagnóstico ---------- */
-  var form = document.getElementById('leadForm');
-  if (form) {
-    var errorBox = document.getElementById('formError');
-    var successBox = document.getElementById('formSuccess');
+  /* ---------- Formulário em passos (diagnóstico) ---------- */
+  function waOpen(text) {
+    var w = window.open(waLink(text), '_blank', 'noopener');
+    return !!w;
+  }
 
-    function validate() {
-      var ok = true;
-      form.querySelectorAll('[required]').forEach(function (f) {
-        var valid = f.value.trim() !== '' && (f.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value));
-        f.classList.toggle('is-invalid', !valid);
-        if (!valid) ok = false;
+  function summary(d) {
+    return [
+      'Pedido de diagnóstico (site Eleve Makers)',
+      'Nome: ' + (d.nome || ''),
+      'Escritório: ' + (d.empresa || ''),
+      'Segmento: ' + (d.segmento || ''),
+      'Contatos/mês: ' + (d.contatos || ''),
+      'Frentes: ' + (d.frentes || ''),
+      'Gargalo: ' + (d.gargalo || ''),
+      'Faturamento: ' + (d.faturamento || ''),
+      'E-mail: ' + (d.email || ''),
+      'WhatsApp: ' + (d.telefone || ''),
+      d.observacoes ? 'Obs: ' + d.observacoes : ''
+    ].filter(Boolean).join('\n');
+  }
+
+  function initQuote(box) {
+    var steps = Array.prototype.slice.call(box.querySelectorAll('.quote__step[data-step]'))
+      .filter(function (st) { return st.getAttribute('data-step') !== 'success'; });
+    var successStep = box.querySelector('.quote__step[data-step="success"]');
+    var label = box.querySelector('[data-step-label]');
+    var prevBtn = box.querySelector('[data-prev]');
+    var nextBtn = box.querySelector('[data-next]');
+    var total = steps.length;
+    var current = 0;
+    var data = {};
+    var errorEl = null;
+
+    // range outputs
+    box.querySelectorAll('input[type="range"][data-bind]').forEach(function (r) {
+      var out = box.querySelector('[data-out="' + r.getAttribute('data-bind') + '"]');
+      var sync = function () { if (out) out.textContent = r.value; data[r.name] = r.value; };
+      r.addEventListener('input', sync); sync();
+    });
+
+    // chips (multi)
+    box.querySelectorAll('[data-chips]').forEach(function (group) {
+      var key = group.getAttribute('data-chips');
+      group.querySelectorAll('.chip').forEach(function (c) {
+        c.setAttribute('aria-pressed', 'false');
+        c.addEventListener('click', function () {
+          var on = c.classList.toggle('is-on');
+          c.setAttribute('aria-pressed', on ? 'true' : 'false');
+          data[key] = Array.prototype.slice.call(group.querySelectorAll('.chip.is-on'))
+            .map(function (x) { return x.getAttribute('data-value'); }).join(', ');
+          refresh();
+        });
       });
+    });
+
+    // inputs / selects
+    box.querySelectorAll('.quote__input, .quote__select').forEach(function (f) {
+      var sync = function () { data[f.name] = f.value.trim(); f.classList.remove('is-invalid'); refresh(); };
+      f.addEventListener('input', sync);
+      f.addEventListener('change', sync);
+      data[f.name] = f.value.trim();
+    });
+
+    function fieldValid(f) {
+      if (!f.required) return true;
+      var v = f.value.trim();
+      if (!v) return false;
+      if (f.type === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      if (f.type === 'tel') return v.replace(/\D/g, '').length >= 10;
+      return true;
+    }
+
+    function stepValid(idx) {
+      var st = steps[idx];
+      var ok = true;
+      st.querySelectorAll('.quote__input, .quote__select').forEach(function (f) { if (!fieldValid(f)) ok = false; });
+      st.querySelectorAll('[data-chips]').forEach(function (g) { if (!g.querySelector('.chip.is-on')) ok = false; });
       return ok;
     }
 
-    function payload() {
-      var data = {};
-      new FormData(form).forEach(function (v, k) { data[k] = String(v).trim(); });
-      data.origem = 'elevemakers.com';
-      data.enviado_em = new Date().toISOString();
-      return data;
+    function markInvalid(idx) {
+      steps[idx].querySelectorAll('.quote__input, .quote__select').forEach(function (f) {
+        f.classList.toggle('is-invalid', !fieldValid(f));
+      });
     }
 
-    function summary(d) {
-      return [
-        'Pedido de diagnóstico (site Eleve Makers)',
-        'Nome: ' + d.nome,
-        'Escritório: ' + d.empresa,
-        'Segmento: ' + d.segmento,
-        'Faturamento: ' + d.faturamento,
-        'Interesse: ' + d.interesse,
-        'E-mail: ' + d.email,
-        'WhatsApp: ' + d.whatsapp,
-        d.mensagem ? 'Desafio: ' + d.mensagem : ''
-      ].filter(Boolean).join('\n');
+    function refresh() {
+      steps.forEach(function (st, k) { st.classList.toggle('is-active', k === current); });
+      if (label) label.textContent = 'Passo ' + (current + 1) + '/' + total;
+      if (prevBtn) prevBtn.classList.toggle('is-visible', current > 0);
+      if (nextBtn) {
+        nextBtn.textContent = current === total - 1 ? 'Solicitar diagnóstico' : 'Próximo passo';
+        nextBtn.disabled = !stepValid(current);
+      }
     }
 
-    function done() {
-      form.classList.add('is-sent');
-      successBox.hidden = false;
-      successBox.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
-      if (window.dataLayer) window.dataLayer.push({ event: 'lead_diagnostico' });
+    function showError(msg) {
+      if (!errorEl) { errorEl = document.createElement('p'); errorEl.className = 'quote__error'; box.querySelector('[data-nav]').insertAdjacentElement('beforebegin', errorEl); }
+      errorEl.textContent = msg;
     }
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      errorBox.hidden = true;
-      if (!validate()) { errorBox.hidden = false; return; }
-      var data = payload();
-      var btn = form.querySelector('button[type="submit"]');
-      btn.disabled = true;
+    function finish() {
+      steps.forEach(function (st) { st.classList.remove('is-active'); });
+      if (successStep) successStep.classList.add('is-active');
+      box.classList.add('is-done');
+      if (errorEl) errorEl.remove();
+      box.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      if (window.dataLayer) window.dataLayer.push({ event: 'lead_diagnostico', segmento: data.segmento, frentes: data.frentes });
+    }
 
+    function submit() {
+      var payload = Object.assign({}, data, { origem: 'elevemakers.com', enviado_em: new Date().toISOString() });
+      nextBtn.disabled = true;
+      nextBtn.textContent = 'Enviando…';
       if (CONFIG.formEndpoint) {
-        fetch(CONFIG.formEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        }).then(function (r) {
-          if (!r.ok) throw new Error('HTTP ' + r.status);
-          done();
-        }).catch(function () {
-          // fallback: abre o WhatsApp com o resumo
-          window.open(waLink(summary(data)), '_blank', 'noopener');
-          done();
-        }).finally(function () { btn.disabled = false; });
+        fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+          .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); finish(); })
+          .catch(function () { waOpen(summary(payload)); finish(); });
       } else {
-        window.open(waLink(summary(data)), '_blank', 'noopener');
-        done();
-        btn.disabled = false;
+        waOpen(summary(payload));
+        finish();
+      }
+    }
+
+    nextBtn && nextBtn.addEventListener('click', function () {
+      if (!stepValid(current)) { markInvalid(current); showError('Preencha os campos para continuar.'); return; }
+      if (errorEl) { errorEl.remove(); errorEl = null; }
+      if (current < total - 1) {
+        current += 1; refresh();
+        var first = steps[current].querySelector('input, select, button.chip');
+        if (first) first.focus({ preventScroll: true });
+      } else {
+        submit();
       }
     });
-
-    form.querySelectorAll('[required]').forEach(function (f) {
-      f.addEventListener('input', function () { f.classList.remove('is-invalid'); });
+    prevBtn && prevBtn.addEventListener('click', function () {
+      if (current > 0) { current -= 1; refresh(); }
     });
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && e.target.matches('.quote__input, .quote__select') && !nextBtn.disabled) { e.preventDefault(); nextBtn.click(); }
+    });
+
+    refresh();
   }
+
+  document.querySelectorAll('[data-quote-form]').forEach(initQuote);
 })();

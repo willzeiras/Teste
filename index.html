@@ -37,7 +37,7 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#valor">Pular para o conteúdo</a>
+  <a class="skip-link" href="#diagnostico">Pular para o conteúdo</a>
 
   <!-- ===== NAVIGATION ===== -->
   <nav class="nav" id="nav" aria-label="Principal">
@@ -138,6 +138,119 @@
       <div class="hero-wordmark">
         <p class="wordmark">Eleve Makers</p>
         <p class="wordmark-sub">IA e resultado para quem projeta</p>
+      </div>
+    </section>
+
+    <!-- ===== DIAGNÓSTICO (formulário em passos, foco em conversão) ===== -->
+    <section class="quote" id="diagnostico">
+      <div class="quote-content">
+        <div class="quote__inner">
+          <div class="quote__box" data-quote-form>
+            <span class="cross cross-tl" aria-hidden="true"></span>
+            <span class="cross cross-tr" aria-hidden="true"></span>
+            <span class="cross cross-bl" aria-hidden="true"></span>
+            <span class="cross cross-br" aria-hidden="true"></span>
+
+            <div class="quote__step-label mono" data-step-label>Passo 1/4</div>
+
+            <!-- Passo 1: volume de contatos + segmento -->
+            <div class="quote__step is-active" data-step="1">
+              <h2 class="quote__title">Faça um diagnóstico gratuito do seu comercial.</h2>
+              <div class="quote__grid">
+                <div class="quote__field">
+                  <label class="quote__label" for="q1-contatos">Quantos pedidos de orçamento você recebe por mês?</label>
+                  <input type="range" id="q1-contatos" name="contatos" min="0" max="200" step="5" value="20" class="quote__range" data-bind="contatos">
+                  <div class="quote__value"><span data-out="contatos">20</span> <span class="quote__unit">contatos / mês</span></div>
+                </div>
+                <div class="quote__field">
+                  <label class="quote__label" for="q1-segmento">Segmento do seu negócio</label>
+                  <select id="q1-segmento" name="segmento" class="quote__select" data-bind="segmento" required>
+                    <option value="">Selecione</option>
+                    <option value="Escritório de arquitetura">Escritório de arquitetura</option>
+                    <option value="Design de interiores">Design de interiores</option>
+                    <option value="Construtora ou incorporadora">Construtora ou incorporadora</option>
+                    <option value="Engenharia e reformas">Engenharia e reformas</option>
+                    <option value="Marcenaria e planejados">Marcenaria e planejados</option>
+                    <option value="Loja de acabamentos ou pedras">Loja de acabamentos ou pedras</option>
+                    <option value="Paisagismo">Paisagismo</option>
+                    <option value="Iluminação e automação">Iluminação e automação</option>
+                    <option value="Outro do ecossistema">Outro do ecossistema</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Passo 2: o que precisa -->
+            <div class="quote__step" data-step="2">
+              <h2 class="quote__title">O que o seu comercial precisa hoje?</h2>
+              <p class="quote__sub">Selecione uma ou mais frentes.</p>
+              <div class="quote__chips" data-chips="frentes">
+                <button type="button" class="chip" data-value="Gerar clientes qualificados">Gerar clientes qualificados</button>
+                <button type="button" class="chip" data-value="Site que vende projeto">Site que vende projeto</button>
+                <button type="button" class="chip" data-value="CRM para o escritório">CRM para o escritório</button>
+                <button type="button" class="chip" data-value="Agente de IA no WhatsApp">Agente de IA no WhatsApp</button>
+                <button type="button" class="chip" data-value="Operação completa">Operação completa</button>
+              </div>
+            </div>
+
+            <!-- Passo 3: gargalo + faturamento -->
+            <div class="quote__step" data-step="3">
+              <h2 class="quote__title">Onde o cliente esfria hoje?</h2>
+              <div class="quote__grid">
+                <div class="quote__field">
+                  <label class="quote__label" for="q1-gargalo">Maior gargalo</label>
+                  <select id="q1-gargalo" name="gargalo" class="quote__select" data-bind="gargalo" required>
+                    <option value="">Selecione</option>
+                    <option value="Poucos contatos chegando">Poucos contatos chegando</option>
+                    <option value="Contatos sem perfil ou sem verba">Contatos sem perfil ou sem verba</option>
+                    <option value="Demora para responder">Demora para responder</option>
+                    <option value="Propostas sem retorno">Propostas sem retorno</option>
+                    <option value="Falta de organização e CRM">Falta de organização e CRM</option>
+                    <option value="Não sei dizer">Não sei dizer</option>
+                  </select>
+                </div>
+                <div class="quote__field">
+                  <label class="quote__label" for="q1-faturamento">Faturamento mensal</label>
+                  <select id="q1-faturamento" name="faturamento" class="quote__select" data-bind="faturamento" required>
+                    <option value="">Selecione</option>
+                    <option value="Até R$ 50 mil">Até R$ 50 mil</option>
+                    <option value="R$ 50 a 200 mil">R$ 50 a 200 mil</option>
+                    <option value="R$ 200 a 500 mil">R$ 200 a 500 mil</option>
+                    <option value="R$ 500 mil a 2 milhões">R$ 500 mil a 2 milhões</option>
+                    <option value="Acima de R$ 2 milhões">Acima de R$ 2 milhões</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Passo 4: contato -->
+            <div class="quote__step" data-step="4">
+              <h2 class="quote__title">Estamos prontos para conversar.</h2>
+              <p class="quote__sub">Em até 1 dia útil, um especialista entra em contato com o diagnóstico inicial do seu funil.</p>
+              <div class="quote__grid">
+                <div class="quote__field"><label class="quote__label" for="q1-nome">Nome</label><input type="text" id="q1-nome" name="nome" class="quote__input" data-bind="nome" autocomplete="name" required></div>
+                <div class="quote__field"><label class="quote__label" for="q1-empresa">Escritório ou empresa</label><input type="text" id="q1-empresa" name="empresa" class="quote__input" data-bind="empresa" autocomplete="organization" required></div>
+                <div class="quote__field"><label class="quote__label" for="q1-email">E-mail</label><input type="email" id="q1-email" name="email" class="quote__input" data-bind="email" autocomplete="email" required></div>
+                <div class="quote__field"><label class="quote__label" for="q1-telefone">WhatsApp</label><input type="tel" id="q1-telefone" name="telefone" class="quote__input" data-bind="telefone" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-0000" required></div>
+                <div class="quote__field quote__field--full"><label class="quote__label" for="q1-obs">Observações (opcional)</label><input type="text" id="q1-obs" name="observacoes" class="quote__input" data-bind="observacoes" placeholder="Algo que devamos saber"></div>
+              </div>
+              <p class="quote__note">Seus dados ficam só com a gente.</p>
+            </div>
+
+            <!-- Confirmação -->
+            <div class="quote__step quote__success" data-step="success">
+              <div class="quote__check" aria-hidden="true">✓</div>
+              <h2 class="quote__title">Recebemos seu pedido.</h2>
+              <p class="quote__sub">Em até 1 dia útil, um especialista entra em contato para dar continuidade ao diagnóstico. Se preferir adiantar, fale com a gente no <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" data-whatsapp>WhatsApp</a>.</p>
+            </div>
+
+            <!-- Navegação -->
+            <div class="quote__nav" data-nav>
+              <button type="button" class="quote__back" data-prev>← Voltar</button>
+              <button type="button" class="quote__next" data-next disabled>Próximo passo</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -552,8 +665,8 @@
       </div>
     </section>
 
-    <!-- ===== DIAGNÓSTICO (CTA + formulário) ===== -->
-    <section class="diag" id="diagnostico">
+    <!-- ===== CONTATO (segunda instância do formulário em passos) ===== -->
+    <section class="diag" id="contato">
       <div class="diag-content">
         <div class="diag-copy">
           <h2>Descubra onde o seu escritório está <span class="grad">perdendo projeto.</span></h2>
@@ -565,79 +678,113 @@
           </ul>
           <p class="diag-contact">Prefere falar direto? <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" data-whatsapp>WhatsApp</a> · <a href="mailto:contato@elevemakers.com">contato@elevemakers.com</a></p>
         </div>
+        <div class="quote__inner">
+          <div class="quote__box" data-quote-form>
+            <span class="cross cross-tl" aria-hidden="true"></span>
+            <span class="cross cross-tr" aria-hidden="true"></span>
+            <span class="cross cross-bl" aria-hidden="true"></span>
+            <span class="cross cross-br" aria-hidden="true"></span>
 
-        <form class="form" id="leadForm" novalidate>
-          <div class="field">
-            <label for="nome">Nome</label>
-            <input id="nome" name="nome" type="text" autocomplete="name" required>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="email">E-mail</label>
-              <input id="email" name="email" type="email" autocomplete="email" required>
+            <div class="quote__step-label mono" data-step-label>Passo 1/4</div>
+
+            <!-- Passo 1: volume de contatos + segmento -->
+            <div class="quote__step is-active" data-step="1">
+              <h2 class="quote__title">Comece o diagnóstico agora.</h2>
+              <div class="quote__grid">
+                <div class="quote__field">
+                  <label class="quote__label" for="q2-contatos">Quantos pedidos de orçamento você recebe por mês?</label>
+                  <input type="range" id="q2-contatos" name="contatos" min="0" max="200" step="5" value="20" class="quote__range" data-bind="contatos">
+                  <div class="quote__value"><span data-out="contatos">20</span> <span class="quote__unit">contatos / mês</span></div>
+                </div>
+                <div class="quote__field">
+                  <label class="quote__label" for="q2-segmento">Segmento do seu negócio</label>
+                  <select id="q2-segmento" name="segmento" class="quote__select" data-bind="segmento" required>
+                    <option value="">Selecione</option>
+                    <option value="Escritório de arquitetura">Escritório de arquitetura</option>
+                    <option value="Design de interiores">Design de interiores</option>
+                    <option value="Construtora ou incorporadora">Construtora ou incorporadora</option>
+                    <option value="Engenharia e reformas">Engenharia e reformas</option>
+                    <option value="Marcenaria e planejados">Marcenaria e planejados</option>
+                    <option value="Loja de acabamentos ou pedras">Loja de acabamentos ou pedras</option>
+                    <option value="Paisagismo">Paisagismo</option>
+                    <option value="Iluminação e automação">Iluminação e automação</option>
+                    <option value="Outro do ecossistema">Outro do ecossistema</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="field">
-              <label for="whatsapp">WhatsApp</label>
-              <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required>
+
+            <!-- Passo 2: o que precisa -->
+            <div class="quote__step" data-step="2">
+              <h2 class="quote__title">O que o seu comercial precisa hoje?</h2>
+              <p class="quote__sub">Selecione uma ou mais frentes.</p>
+              <div class="quote__chips" data-chips="frentes">
+                <button type="button" class="chip" data-value="Gerar clientes qualificados">Gerar clientes qualificados</button>
+                <button type="button" class="chip" data-value="Site que vende projeto">Site que vende projeto</button>
+                <button type="button" class="chip" data-value="CRM para o escritório">CRM para o escritório</button>
+                <button type="button" class="chip" data-value="Agente de IA no WhatsApp">Agente de IA no WhatsApp</button>
+                <button type="button" class="chip" data-value="Operação completa">Operação completa</button>
+              </div>
+            </div>
+
+            <!-- Passo 3: gargalo + faturamento -->
+            <div class="quote__step" data-step="3">
+              <h2 class="quote__title">Onde o cliente esfria hoje?</h2>
+              <div class="quote__grid">
+                <div class="quote__field">
+                  <label class="quote__label" for="q2-gargalo">Maior gargalo</label>
+                  <select id="q2-gargalo" name="gargalo" class="quote__select" data-bind="gargalo" required>
+                    <option value="">Selecione</option>
+                    <option value="Poucos contatos chegando">Poucos contatos chegando</option>
+                    <option value="Contatos sem perfil ou sem verba">Contatos sem perfil ou sem verba</option>
+                    <option value="Demora para responder">Demora para responder</option>
+                    <option value="Propostas sem retorno">Propostas sem retorno</option>
+                    <option value="Falta de organização e CRM">Falta de organização e CRM</option>
+                    <option value="Não sei dizer">Não sei dizer</option>
+                  </select>
+                </div>
+                <div class="quote__field">
+                  <label class="quote__label" for="q2-faturamento">Faturamento mensal</label>
+                  <select id="q2-faturamento" name="faturamento" class="quote__select" data-bind="faturamento" required>
+                    <option value="">Selecione</option>
+                    <option value="Até R$ 50 mil">Até R$ 50 mil</option>
+                    <option value="R$ 50 a 200 mil">R$ 50 a 200 mil</option>
+                    <option value="R$ 200 a 500 mil">R$ 200 a 500 mil</option>
+                    <option value="R$ 500 mil a 2 milhões">R$ 500 mil a 2 milhões</option>
+                    <option value="Acima de R$ 2 milhões">Acima de R$ 2 milhões</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Passo 4: contato -->
+            <div class="quote__step" data-step="4">
+              <h2 class="quote__title">Estamos prontos para conversar.</h2>
+              <p class="quote__sub">Em até 1 dia útil, um especialista entra em contato com o diagnóstico inicial do seu funil.</p>
+              <div class="quote__grid">
+                <div class="quote__field"><label class="quote__label" for="q2-nome">Nome</label><input type="text" id="q2-nome" name="nome" class="quote__input" data-bind="nome" autocomplete="name" required></div>
+                <div class="quote__field"><label class="quote__label" for="q2-empresa">Escritório ou empresa</label><input type="text" id="q2-empresa" name="empresa" class="quote__input" data-bind="empresa" autocomplete="organization" required></div>
+                <div class="quote__field"><label class="quote__label" for="q2-email">E-mail</label><input type="email" id="q2-email" name="email" class="quote__input" data-bind="email" autocomplete="email" required></div>
+                <div class="quote__field"><label class="quote__label" for="q2-telefone">WhatsApp</label><input type="tel" id="q2-telefone" name="telefone" class="quote__input" data-bind="telefone" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-0000" required></div>
+                <div class="quote__field quote__field--full"><label class="quote__label" for="q2-obs">Observações (opcional)</label><input type="text" id="q2-obs" name="observacoes" class="quote__input" data-bind="observacoes" placeholder="Algo que devamos saber"></div>
+              </div>
+              <p class="quote__note">Seus dados ficam só com a gente.</p>
+            </div>
+
+            <!-- Confirmação -->
+            <div class="quote__step quote__success" data-step="success">
+              <div class="quote__check" aria-hidden="true">✓</div>
+              <h2 class="quote__title">Recebemos seu pedido.</h2>
+              <p class="quote__sub">Em até 1 dia útil, um especialista entra em contato para dar continuidade ao diagnóstico. Se preferir adiantar, fale com a gente no <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" data-whatsapp>WhatsApp</a>.</p>
+            </div>
+
+            <!-- Navegação -->
+            <div class="quote__nav" data-nav>
+              <button type="button" class="quote__back" data-prev>← Voltar</button>
+              <button type="button" class="quote__next" data-next disabled>Próximo passo</button>
             </div>
           </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="empresa">Escritório ou empresa</label>
-              <input id="empresa" name="empresa" type="text" autocomplete="organization" required>
-            </div>
-            <div class="field">
-              <label for="segmento">Segmento</label>
-              <select id="segmento" name="segmento" required>
-                <option value="">Selecione</option>
-                <option>Escritório de arquitetura</option>
-                <option>Design de interiores</option>
-                <option>Construtora ou incorporadora</option>
-                <option>Engenharia e reformas</option>
-                <option>Marcenaria e planejados</option>
-                <option>Loja de acabamentos</option>
-                <option>Paisagismo</option>
-                <option>Iluminação e automação</option>
-                <option>Outro do ecossistema</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="faturamento">Faturamento mensal</label>
-              <select id="faturamento" name="faturamento" required>
-                <option value="">Selecione</option>
-                <option>Até R$ 50 mil</option>
-                <option>R$ 50 a 200 mil</option>
-                <option>R$ 200 a 500 mil</option>
-                <option>R$ 500 mil a 2 milhões</option>
-                <option>Acima de R$ 2 milhões</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="interesse">Principal interesse</label>
-              <select id="interesse" name="interesse" required>
-                <option value="">Selecione</option>
-                <option>Gerar clientes qualificados</option>
-                <option>Site ou landing page</option>
-                <option>CRM e automação</option>
-                <option>Agente de IA</option>
-                <option>Operação completa</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="mensagem">Conte rapidamente o desafio <span class="opt">(opcional)</span></label>
-            <textarea id="mensagem" name="mensagem" rows="3"></textarea>
-          </div>
-          <p class="form-error" id="formError" hidden>Preencha os campos obrigatórios para continuar.</p>
-          <button class="btn-dark btn-block" type="submit">Solicitar diagnóstico gratuito <span class="arrow" aria-hidden="true"></span></button>
-          <p class="form-note">Respondemos em até 1 dia útil. Seus dados ficam só com a gente.</p>
-          <div class="form-success" id="formSuccess" hidden>
-            <strong>Recebemos seu pedido.</strong>
-            <p>Um especialista vai entrar em contato em até 1 dia útil. Se preferir adiantar, fale com a gente agora no <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" data-whatsapp>WhatsApp</a>.</p>
-          </div>
-        </form>
+        </div>
       </div>
     </section>
   </main>
