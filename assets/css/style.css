@@ -9,7 +9,7 @@
 :root {
   color-scheme: light;
 
-  --cream: #FCF8EC;        /* ground do body e do hero */
+  --cream: #F2F2F2;        /* sem bege: ground único cinza claro */
   --grey: #F2F2F2;         /* fundo das seções claras */
   --grey-2: #F1F1F1;
   --ink: #222222;          /* texto principal */
@@ -31,7 +31,7 @@
   --footer-link: #BDCDDB;
   --footer-tag: #859CB2;
   --footer-muted: #6E7A87;
-  --paper: #FCF8EA;
+  --paper: #F2F2F2;
 
   --display: "Fraunces", "Georgia", "Times New Roman", serif;
   --body: "Jost", "Helvetica Neue", Arial, sans-serif;
@@ -157,7 +157,7 @@ h1, h2, .display {
 }
 .nav.is-scrolled {
   padding: 14px 40px;
-  background: rgba(252,248,236,.86);
+  background: rgba(242,242,242,.86);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 1px 0 rgba(34,34,34,.06);
 }
@@ -301,7 +301,7 @@ h1, h2, .display {
 }
 .logos-fade {
   position: absolute; left: 0; right: 0; top: -2px; height: 130px; z-index: 1; pointer-events: none;
-  background: linear-gradient(#FCF8EC 0%, rgba(252,248,236,.55) 45%, rgba(242,242,242,0) 100%);
+  background: linear-gradient(#F2F2F2 0%, rgba(242,242,242,.55) 45%, rgba(242,242,242,0) 100%);
 }
 .logos-content { z-index: 2; padding-top: 140px; text-align: center; }
 .logos-label { font-size: 14px; line-height: 1.3; color: var(--ink); }
