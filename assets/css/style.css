@@ -316,12 +316,12 @@ h1, h2, .display {
 }
 .clients li { display: flex; }
 .client {
-  display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 22px 48px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 22px 34px;
   border-left: 1px solid var(--line-2); transition: opacity .25s;
 }
 .clients li:first-child .client { border-left: 0; }
 .client:hover { opacity: .65; }
-.client-name { font-family: var(--display); font-size: 30px; line-height: 1; color: var(--ink); white-space: nowrap; }
+.client-name { font-family: var(--display); font-size: 27px; line-height: 1; color: var(--ink); white-space: nowrap; }
 .client-seg { font-size: 12px; letter-spacing: .02em; color: var(--ink-2); }
 .logos-label-2 { margin-top: 72px; }
 .marquee {
@@ -508,6 +508,8 @@ h1, h2, .display {
   width: 100%; max-width: 1040px; margin-top: 90px;
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px;
 }
+/* 5º case (ímpar no fim) ocupa a linha inteira */
+.case-grid .case:nth-child(odd):last-child { grid-column: 1 / -1; }
 .case {
   display: flex; flex-direction: column; gap: 14px; padding: 28px 31px 26px; border-radius: 14px;
   color: var(--on-dark); min-height: 300px; transition: transform .35s var(--ease);
