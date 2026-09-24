@@ -249,7 +249,7 @@ h1, h2, .display {
 .hero-wave {
   position: absolute; z-index: 0; pointer-events: none;
   left: -6%; right: -6%; top: -6%; bottom: auto;
-  width: 112%; height: 128%; max-width: none;
+  width: 112%; height: 117%; max-width: none;
   animation: wavedrift 32s ease-in-out infinite alternate;
   will-change: transform;
 }
@@ -600,14 +600,14 @@ h1, h2, .display {
 .diag-contact a { text-decoration: underline; text-underline-offset: 4px; color: var(--ink); }
 
 /* ---------- Formulário em passos (diagnóstico) ---------- */
-.quote { background: transparent; padding-block: 72px 96px; position: relative; z-index: 1; }
+.quote { background: transparent; padding-block: 110px 96px; position: relative; z-index: 1; }
 .quote-content { position: relative; width: 100%; max-width: 1400px; margin: 0 auto; padding-inline: var(--gutter); }
 .quote__inner { max-width: 943px; margin: 0 auto; }
 .diag .quote__inner { max-width: none; margin: 0; }
 .quote__box {
-  position: relative; background: var(--grey); border: 1px solid var(--line);
+  position: relative; background: transparent; border: 1px solid var(--line);
   padding: 36px 44px 32px;
-  box-shadow: 0 30px 60px -40px rgba(17,22,30,.35);
+  box-shadow: none;
 }
 .quote__step-label { font-size: 12px; letter-spacing: .04em; color: var(--slate); margin-bottom: 18px; }
 .quote__step { display: none; }
@@ -830,4 +830,4 @@ h1, h2, .display {
 html, body { overflow-x: clip; }
 
 /* seção de diagnóstico após a capa: oculta — o formulário vive em #contato */
-.quote#diagnostico[hidden] { display: none !important; }
+
