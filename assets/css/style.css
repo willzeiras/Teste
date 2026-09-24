@@ -828,3 +828,6 @@ h1, h2, .display {
 }
 
 html, body { overflow-x: clip; }
+
+/* seção de diagnóstico após a capa: oculta — o formulário vive em #contato */
+.quote#diagnostico[hidden] { display: none !important; }
